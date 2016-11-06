@@ -1,0 +1,11 @@
+body {
+background-image:url("../imgs/background.jpg")
+}
+header{
+background-color:navy;
+color:white;
+}
+.btn-iutag{
+background-color:orange;
+color:white;
+}
