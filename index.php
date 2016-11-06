@@ -11,6 +11,7 @@
     <title>Acceso al S.D.G.H PNF Mecanica</title>
 </head>
 <body>
+    <!-- Encabezadp del login-->
     <header class="jumbotron text-center">
         <div class="container"><h1 class="hidden-xs">Sistema de Gestion de Herramientas </h1>
             <br>
@@ -40,24 +41,27 @@
                     <!--Contenido del login de Usuario-->
                    <div class="tab-pane active " id="user">
                        <form action="" >
+                            <!-- Input con Icono-->
                            <div class="form-group input-group">
                                <span class="input-group-addon hidden-xs"> <span class="glyphicon glyphicon-user"></span> </span>
                                <input type="text" id="user" class="form-control " placeholder="Usuario">
                             </div>                           
-
+                            <!-- Input con Icono-->
+                           <div class="form-group input-group">
                             <div class="form-group input-group">
                                 <span class="input-group-addon hidden-xs"> <span class="glyphicon glyphicon-lock"></span> </span>
                                <input type="password" id="pass" class="form-control" placeholder="Contraseña">
                             </div>                      
                             <br> 
                               <div class="form-group text-center">
-                                  <button class="btn btn-primary">Entrar<span class="glyphicon glyphicon-send"></span> </button>
+                                  <button class="btn btn-primary">Entrar <span class="glyphicon glyphicon-send"></span> </button>
                               </div>
                        </form>
                    </div>
                     <!-- Contenido del login de Administrador -->
                    <div class="tab-pane" id="admin">
                        <form action="">
+                            <!-- Input con icono y boton -->
                            <div class="form-group input-group">
                                <span class="input-group-addon hidden-xs"> <span class="glyphicon glyphicon-lock"></span> </span>
                                <input class="form-control" type="password" id="pass-admin" placeholder="Contraseña del Administrador">
@@ -81,5 +85,22 @@
    </div>
 <script src="js/jquery-3.1.1.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
+<script src="js/notify.min.js"></script>
+<?php
+if (isset($_GET["loginstatus"])){
+    //Define el estado del Acceso:
+    // el estado 1: Error en las credenciales de la Sesion
+    // el estado 2: Acceso no autorizado
+    // el estado 3: Salida con exito del sistema
+	$status=$_GET["loginstatus"];
+	if ($status==1){
+		echo '<script>$.notify("Error en el usuario o contraseña！","danger");</script>';
+	}else if ($status==2){
+		echo '<script>$.notify("¡Usted no se ha identificado!","warning");</script>';
+	}else if ($status==3){
+		echo '<script>$.notify("Has salido con exito","success");</script>';
+	}
+}
+?>
 </body>
 </html>
