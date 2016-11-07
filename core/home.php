@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <!-- Llamando Estilos -->
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/jasny-bootstrap.min.css">
     <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/base.css">
     <link rel="icon" href="../imgs/favicon.png">
     <script src="js/list.min.js"></script>
     <title>S.D.G.H del PNF Mecanica </title>
@@ -34,7 +36,7 @@
 <li><a href=""><span class="glyphicon glyphicon-exclamation-sign"></span> Informacion</a></li>
 <li><a href=""><span class="glyphicon glyphicon-wrench"></span> Herramientas</a></li>
 <li><a href=""><span class="glyphicon glyphicon-book"></span> Materiales</a></li>
-<li><a href=""><span class="glyphicon glyphicon-log-out"></span> Salir</a></li>
+<li><a href="exit.php"><span class="glyphicon glyphicon-log-out"></span> Salir</a></li>
 </ul>
 </nav>
    </div>
@@ -50,6 +52,8 @@
 </nav>
 </div>
 </div>
+
+<!--Declaraciones Javascript -->
 <script src="../js/jquery-3.1.1.min.js"></script>
 <script src="../js/notify.min.js"></script>
 <script src="../js/bootstrap.min.js"></script>

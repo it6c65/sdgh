@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/jasny-bootstrap.min.css">
     <link rel="icon" href="imgs/favicon.png">
      <!-- Sistema de Gestión de Herramientas del 
      Programa Nacional de Formacion de Mecanica-->
@@ -47,7 +48,6 @@
                                <input type="text" id="user" class="form-control " placeholder="Usuario">
                             </div>                           
                             <!-- Input con Icono-->
-                           <div class="form-group input-group">
                             <div class="form-group input-group">
                                 <span class="input-group-addon hidden-xs"> <span class="glyphicon glyphicon-lock"></span> </span>
                                <input type="password" id="pass" class="form-control" placeholder="Contraseña">
@@ -85,6 +85,7 @@
    </div>
 <script src="js/jquery-3.1.1.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
+<script src="js/jasny-bootstrap.min.js"></script>
 <script src="js/notify.min.js"></script>
 <?php
 if (isset($_GET["loginstatus"])){
