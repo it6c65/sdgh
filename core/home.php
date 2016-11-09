@@ -23,7 +23,7 @@
 <a class="navmenu-brand text-center" href="#">
 <img src="../imgs/iutag-logo.png" alt="logo">
  <div class="hidden-md hidden-lg visible-sm-12 visible-xs-12">
-        <button style="color:white !important;" class="btn btn-menu btn-lg" data-toggle="offcanvas" data-target="#menu-principal" data-canvas="body">
+        <button class="btn-slider btn btn-menu btn-lg " data-toggle="offcanvas" data-target="#menu-principal" data-canvas="body">
             Volver <span class="glyphicon glyphicon-share-alt"></span>
         </button>
     </div>
@@ -33,9 +33,9 @@
 <li class="active"><a href="#"> 
     <span class="glyphicon glyphicon-record"></span> Home 
 </a></li>
-<li><a href=""><span class="glyphicon glyphicon-exclamation-sign"></span> Informacion</a></li>
-<li><a href=""><span class="glyphicon glyphicon-wrench"></span> Herramientas</a></li>
-<li><a href=""><span class="glyphicon glyphicon-book"></span> Materiales</a></li>
+<li><a href="info.php"><span class="glyphicon glyphicon-exclamation-sign"></span> Informacion</a></li>
+<li><a href="gestion_herramientas.php"><span class="glyphicon glyphicon-wrench"></span> Herramientas</a></li>
+<li><a href="gestion_materiales.php"><span class="glyphicon glyphicon-book"></span> Materiales</a></li>
 <li><a href="exit.php"><span class="glyphicon glyphicon-log-out"></span> Salir</a></li>
 </ul>
 </nav>
@@ -43,13 +43,11 @@
   <!-- Columna 2-->
  <div class=" col-md-8">
      <!--Barra de navegacion -->
-<nav class="navbar navbar-default">
  <div class="hidden-md hidden-lg visible-sm-12 visible-xs-12">
         <button class="btn btn-menu btn-lg " data-toggle="offcanvas" data-target="#menu-principal" data-canvas="body">
             <span class="glyphicon glyphicon-th"></span>
         </button>
     </div>
-</nav>
 </div>
 </div>
 
