@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="../css/index.css">
     <link rel="stylesheet" href="../css/base.css">
     <link rel="icon" href="../imgs/favicon.png">
-    <script src="js/list.min.js"></script>
+    <script src="../js/list.min.js"></script>
     <title>S.D.G.H del PNF Mecanica </title>
 </head>
 <body> 
@@ -30,9 +30,7 @@
     <!-- Menu vertical -->
 </a>
 <ul class="nav navmenu-nav">
-<li><a href="home.php"> 
-    <span class="glyphicon glyphicon-record"></span> Home 
-</a></li>
+<li><a href="home.php"> <span class="glyphicon glyphicon-record"></span> Home </a></li>
 <li><a href="info.php"><span class="glyphicon glyphicon-exclamation-sign"></span> Informacion</a></li>
 <li><a href="gestion_herramientas.php"><span class="glyphicon glyphicon-wrench"></span> Herramientas</a></li>
 <li class="active"><a href="#"><span class="glyphicon glyphicon-book"></span> Materiales</a></li>

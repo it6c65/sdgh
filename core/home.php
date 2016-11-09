@@ -30,9 +30,7 @@
     <!-- Menu vertical -->
 </a>
 <ul class="nav navmenu-nav">
-<li class="active"><a href="#"> 
-    <span class="glyphicon glyphicon-record"></span> Home 
-</a></li>
+<li class="active"><a href="#"><span class="glyphicon glyphicon-record"></span> Home</a></li>
 <li><a href="info.php"><span class="glyphicon glyphicon-exclamation-sign"></span> Informacion</a></li>
 <li><a href="gestion_herramientas.php"><span class="glyphicon glyphicon-wrench"></span> Herramientas</a></li>
 <li><a href="gestion_materiales.php"><span class="glyphicon glyphicon-book"></span> Materiales</a></li>
