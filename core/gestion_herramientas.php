@@ -38,27 +38,134 @@
 </nav>
    </div>
   <!-- Columna 2-->
- <div class="col-md-9">
+ <div class="col-md-8">
      <!--Boton reponsive -->
  <div class="hidden-md hidden-lg visible-sm-12 visible-xs-12">
         <button class="btn btn-menu btn-lg " data-toggle="offcanvas" data-target="#menu-principal" data-canvas="body">
             <span class="glyphicon glyphicon-th"></span>
         </button>
     </div>
+    <!--Encabezado de la pagina -->
 <div class="page-header text-center">
+    <h1>Listado de Herramientas</h1>
+</div>
+<div class="row">
+    <!--Buscador de herramientas/materiales-->
+    <div id="herramientas" class="col-xs-12 col-md-offset-1">
+        <div class="input-group col-xs-6 col-xs-offset-3 col-md-4 col-md-offset-7">
+        <input type="text" class="search form-control input-sm" placeholder="Buscar...">
+        <div class="input-group-btn">
+            <button class="btn btn-info btn-sm"><span class="glyphicon glyphicon-search"></span></button>
+        </div>
+    </div>
+    <br>
+    <!--Boton de Agregar-->
+    <button class="btn btn-labeled btn-success btn-sm" data-toggle="collapse" data-target="#agregar_h" aria-expanded="false" aria-controls="agregar_h"><span class="btn-label"><span class="glyphicon glyphicon-plus"></span></span> <strong>Agregar Herramienta</strong></button>
+    <button class="sort btn btn-default btn-sm" data-sort="nombre"> <span class="glyphicon glyphicon-sort"></span> Ordenar por nombre</button>
+    <button class="sort btn btn-default btn-sm" data-sort="disponibilidad"> <span class="glyphicon glyphicon-sort"></span> Ordenar por Estado</button>
+     <!--Menu de Agregar-->
+    <div id="agregar_h" class="collapse">
+        <div class="row">
+            <form action="" class="bg-success">
+                <div class="form-group col-md-6">
+                    <label for="nom_h" class="control-label">Nombre: </label>
+                    <input type="text" class="form-control input-sm" id="nom_h">
+                </div>
+                <div class="clearfix"></div>
+                <div class="form-group col-md-6">
+                    <label for="cantidad">Cantidad: </label>
+                    <input type="number" class="form-control input-sm" id="cantidad">
+                </div>                
+                <div class="clearfix"></div>
+                <div class="form-group col-md-6">
+                    <label for="serial">Serial de la Herramienta: </label>
+                    <input type="text" class="form-control input-sm" data-mask="wwwwww" id="serial">
+                </div>              
+                <div class="clearfix"></div>
+                <div class="form-group col-md-6">
+                    <label for="estado"> Estado de la Herramienta: </label>
+                    <select id="estado" name="estado_h" class="form-control input-sm">
+                        <option value="0">Excelente estado</option>
+                        <option value="1">Reportar herramienta como dañada</option>
+                        <option value="2">Anunciar que la herramienta fue dada a otro ente</option>
+                    </select>
+                </div>        
+                <div class="clearfix"></div>
+                <div class="form-group col-md-6 text-center">
+                    <button class="btn btn-success btn-sm btn-labeled">Enviar<span class="btn-label btn-label-right"><span class="glyphicon glyphicon-send"></span></span></button></div>
+            </form>
+        </div>
+    </div>
+    <br>
+    <br>
+<div class="table-responsive">
+        <table class="table">
+          <thead>
+              <tr>
+                <th>Nombre</th>
+                <th>Estado</th>
+                <th>Cantidad</th>
+                <th>Serial</th>
+                <th></th>
+                </tr>
+            </thead>        
+            <tbody class="list">
+            <tr>
+                <td class="nombre"> Destornillador Estrella </td>
+                <td class="disponibilidad"> <span class="label label-danger">No disponible </span></td>
+                <td class="cantidad"> <span class="badge">0</span></td>
+                <td> #124ADSA</td>
+                <td> <button class="btn btn-labeled btn-purple btn-sm"><span class="btn-label"><span class="glyphicon glyphicon-edit"></span></span> Editar </button>
+<button class="btn btn-labeled btn-danger btn-sm"> <span class="btn-label"><span class="glyphicon glyphicon-remove"></span></span> Eliminar </button>
+                </td>
+            </tr>
+             <tr>
+                <td class="nombre"> Martillo </td>
+                <td class="disponibilidad"> <span class="label label-success"> Disponible </span></td>
+                <td> <span class="badge">16</span></td>
+                <td> #124ADSA</td>
+                <td> <button class="btn btn-labeled btn-purple btn-sm"><span class="btn-label"><span class="glyphicon glyphicon-edit"></span></span> Editar </button>
+<button class="btn btn-labeled btn-danger btn-sm"> <span class="btn-label"><span class="glyphicon glyphicon-remove"></span></span> Eliminar </button>
+                </td>
+            </tr>
+            <tr>
+                <td class="nombre"> Llave Inglesa </td>
+                <td class="disponibilidad"> <span class="label label-warning"> Dañado </span></td>
+                <td> <span class="badge"></span></td>
+                <td> #124ADSA</td>
+                <td> <button class="btn btn-labeled btn-purple btn-sm"><span class="btn-label"><span class="glyphicon glyphicon-edit"></span></span> Editar </button>
+<button class="btn btn-labeled btn-danger btn-sm"> <span class="btn-label"><span class="glyphicon glyphicon-remove"></span></span> Eliminar </button>
+                </td>
+            </tr>
+              <tr>
+                <td class="nombre"> Prensa </td>
+                <td class="disponibilidad"> <span class="label label-info"> Prestado </span></td>
+                <td> <span class="badge"></span></td>
+                <td> #124ADSA</td>
+                <td> <button class="btn btn-labeled btn-purple btn-sm"><span class="btn-label"><span class="glyphicon glyphicon-edit"></span></span> Editar </button>
+<button class="btn btn-labeled btn-danger btn-sm"> <span class="btn-label"><span class="glyphicon glyphicon-remove"></span></span> Eliminar </button>
+                </td>
+            </tr>
+                 <tr>
+                    <td class="nombre"> Za </td>
+                    <td class="disponibilidad"> <span class="label label-danger">No disponible </span></td>
+                    <td> <span class="badge">0</span></td>
+                    <td> #124ADSA</td>
+                    <td> <button class="btn btn-labeled btn-purple btn-sm"><span class="btn-label"><span class="glyphicon glyphicon-edit"></span></span> Editar </button>
+<button class="btn btn-labeled btn-danger btn-sm"> <span class="btn-label"><span class="glyphicon glyphicon-remove"></span></span> Eliminar </button>
+                </td>
+            </tr>
 
- <h1>Herramientas</h1>
-</div>
-<header class="text-right row">
-<div class="input-group col-xs-6 col-xs-offset-3 col-md-4 col-md-offset-7">
-<input type="text" class="form-control input-sm" placeholder="Buscar...">
-<div class="input-group-btn">
-<button class="btn btn-info btn-sm"><strong>Buscar</strong> <span class="glyphicon glyphicon-search"></span></button>
-</div>
+            </tbody>
+        </table>
+    </div>
 </div>
 
- </header>
-&copy;
+
+
+</div>
+
+
 
 </div>
 </div>
@@ -66,8 +173,13 @@
 <!--Declaraciones Javascript -->
 <script src="../js/jquery-3.1.1.min.js"></script>
 <script src="../js/notify.min.js"></script>
-<script src="../js/list.min.js"></script>
 <script src="../js/bootstrap.min.js"></script>
 <script src="../js/jasny-bootstrap.min.js"></script>
+<script src="../js/list.min.js"></script>
+
+    <script>
+var options={valueNames:['nombre','disponibilidad']};
+var herramientas= new List('herramientas',options);
+    </script>
 </body>
 </html>

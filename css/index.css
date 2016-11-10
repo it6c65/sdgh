@@ -39,3 +39,11 @@ width:100%;
 .btn-slider{
     color:white !important;
 }
+.btn-purple{
+background-color:purple;
+color:white;
+}
+.btn-purple:hover{
+color:white;
+background-color:navy;
+}
