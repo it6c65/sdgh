@@ -98,9 +98,11 @@
     </div>
     <br>
     <br>
+    <!--Tabla de Herramientas -->
 <div class="table-responsive">
         <table class="table">
           <thead>
+              <!--Titulo de la tabla-->
               <tr>
                 <th>Nombre</th>
                 <th>Estado</th>
@@ -109,6 +111,7 @@
                 <th></th>
                 </tr>
             </thead>        
+             <!--Contenido de la tabla (dinámico) -->
             <tbody class="list">
             <tr>
                 <td class="nombre"> Destornillador Estrella </td>
@@ -158,9 +161,10 @@
 
             </tbody>
         </table>
+        <!--Paginacion dinamica con JS -->
+        <div class="text-center"><ul class="pagination pagination-sm"></ul></div> 
     </div>
 </div>
-
 
 
 </div>
@@ -176,10 +180,7 @@
 <script src="../js/bootstrap.min.js"></script>
 <script src="../js/jasny-bootstrap.min.js"></script>
 <script src="../js/list.min.js"></script>
-
-    <script>
-var options={valueNames:['nombre','disponibilidad']};
-var herramientas= new List('herramientas',options);
-    </script>
+<script src="../js/list.pagination.min.js"></script>
+<script src="../js/busqueda_herramientas.js"></script>
 </body>
 </html>
