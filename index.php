@@ -41,39 +41,40 @@
                <div class="tab-content">
                     <!--Contenido del login de Usuario-->
                    <div class="tab-pane active " id="user">
-                       <form action="" >
+                       <form action="core/login.php" method="post" >
                             <!-- Input con Icono-->
                            <div class="form-group input-group">
                                <span class="input-group-addon hidden-xs"> <span class="glyphicon glyphicon-user"></span> </span>
-                               <input type="text" id="user" class="form-control " placeholder="Usuario">
+                               <input type="text" id="user" name="usuario" class="form-control " placeholder="Usuario">
                             </div>                           
                             <!-- Input con Icono-->
                             <div class="form-group input-group">
                                 <span class="input-group-addon hidden-xs"> <span class="glyphicon glyphicon-lock"></span> </span>
-                               <input type="password" id="pass" class="form-control" placeholder="Contraseña">
+                               <input type="password" name="clave" id="pass" class="form-control" placeholder="Contraseña">
                             </div>                      
                             <br> 
                               <div class="form-group text-center">
-                                  <button class="btn btn-primary">Entrar <span class="glyphicon glyphicon-send"></span> </button>
+                                  <button type="submit" class="btn btn-primary">Entrar <span class="glyphicon glyphicon-send"></span> </button>
                               </div>
                        </form>
                    </div>
                     <!-- Contenido del login de Administrador -->
                    <div class="tab-pane" id="admin">
-                       <form action="">
+                       <form action="core/login.php" method="post">
+                            <input type="hidden" name="usuario" value="admin" readonly>
                             <!-- Input con icono y boton -->
                            <div class="form-group input-group">
                                <span class="input-group-addon hidden-xs"> <span class="glyphicon glyphicon-lock"></span> </span>
-                               <input class="form-control" type="password" id="pass-admin" placeholder="Contraseña del Administrador">
+                               <input class="form-control" name="clave" type="password" id="pass-admin" placeholder="Contraseña del Administrador">
                                <span class="input-group-btn hidden-xs">
-                                   <button class="btn btn-primary">
+                                   <button type="submit" class="btn btn-primary">
                                        Entrar
                                        <span class="glyphicon glyphicon-send"></span> 
                                    </button>
                                </span>
                            </div>
                            <div class="form-group visible-xs-12 visible-xs-block text-center">
-                                       <button class="btn btn-primary"> Entrar <span class="glyphicon glyphicon-send"></span></button>
+                                       <button type="submit" class="btn btn-primary"> Entrar <span class="glyphicon glyphicon-send"></span></button>
                              </div>
 
                        </form>
