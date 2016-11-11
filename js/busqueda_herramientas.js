@@ -5,4 +5,9 @@ var options={valueNames:['nombre','disponibilidad'],
     ]
 };
 var herramientas= new List('herramientas',options);
+$("#btn-editar").click(function(){
+});
 
+$("#btn-borrar").click(function(){
+    $("#h_1").hide();
+});

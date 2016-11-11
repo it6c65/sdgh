@@ -149,13 +149,13 @@
 <button class="btn btn-labeled btn-danger btn-sm"> <span class="btn-label"><span class="glyphicon glyphicon-remove"></span></span> Eliminar </button>
                 </td>
             </tr>
-                 <tr>
+                 <tr id="h_1">
                     <td class="nombre"> Za </td>
                     <td class="disponibilidad"> <span class="label label-danger">No disponible </span></td>
                     <td> <span class="badge">0</span></td>
                     <td> #124ADSA</td>
-                    <td> <button class="btn btn-labeled btn-purple btn-sm"><span class="btn-label"><span class="glyphicon glyphicon-edit"></span></span> Editar </button>
-<button class="btn btn-labeled btn-danger btn-sm"> <span class="btn-label"><span class="glyphicon glyphicon-remove"></span></span> Eliminar </button>
+                    <td> <button id="btn-editar" class="btn btn-labeled btn-purple btn-sm"><span class="btn-label"><span class="glyphicon glyphicon-edit"></span></span> Editar </button>
+<button id="btn-borrar" class="btn btn-labeled btn-danger btn-sm"> <span class="btn-label"><span class="glyphicon glyphicon-remove"></span></span> Eliminar </button>
                 </td>
             </tr>
 
