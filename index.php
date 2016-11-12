@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/jasny-bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.min.css">
     <link rel="icon" href="imgs/favicon.png">
      <!-- Sistema de Gestión de Herramientas del 
      Programa Nacional de Formacion de Mecanica-->
@@ -87,7 +88,8 @@
 <script src="js/jquery-3.1.1.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/jasny-bootstrap.min.js"></script>
-<script src="js/notify.min.js"></script>
+<script src="js/bootstrap-notify.min.js"></script>
+
 <?php
 if (isset($_GET["loginstatus"])){
     //Define el estado del Acceso:
@@ -100,7 +102,19 @@ if (isset($_GET["loginstatus"])){
 	}else if ($status==2){
 		echo '<script>$.notify("¡Usted no se ha identificado!","warning");</script>';
 	}else if ($status==3){
-		echo '<script>$.notify("Has salido con exito","success");</script>';
+        echo '<script>
+    $.notify({
+        message:"Has salido con exito"
+    },
+    {
+        type:"success",
+        delay:20000,
+        timer:10000,
+        placement:{
+            from:"top",
+            align:"center"}
+});
+         </script>';
 	}
 }
 ?>

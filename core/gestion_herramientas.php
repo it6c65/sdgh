@@ -1,3 +1,6 @@
+<?php
+
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -17,7 +20,6 @@
     <div class="row">
          <!-- Columna 1 -->
         <div class="container col-md-3">
-
 <nav class="navmenu navmenu-default navmenu-fixed-left offcanvas-sm" role="navigation" id="menu-principal">
 <a class="navmenu-brand text-center" href="#">
 <img src="../imgs/iutag-logo.png" alt="logo">
@@ -100,69 +102,70 @@
     <br>
     <!--Tabla de Herramientas -->
 <div class="table-responsive">
-        <table class="table">
-          <thead>
-              <!--Titulo de la tabla-->
-              <tr>
-                <th>Nombre</th>
-                <th>Estado</th>
-                <th>Cantidad</th>
-                <th>Serial</th>
-                <th></th>
-                </tr>
-            </thead>        
-             <!--Contenido de la tabla (dinámico) -->
-            <tbody class="list">
-            <tr>
-                <td class="nombre"> Destornillador Estrella </td>
-                <td class="disponibilidad"> <span class="label label-danger">No disponible </span></td>
-                <td class="cantidad"> <span class="badge">0</span></td>
-                <td> #124ADSA</td>
-                <td> <button class="btn btn-labeled btn-purple btn-sm"><span class="btn-label"><span class="glyphicon glyphicon-edit"></span></span> Editar </button>
-<button class="btn btn-labeled btn-danger btn-sm"> <span class="btn-label"><span class="glyphicon glyphicon-remove"></span></span> Eliminar </button>
-                </td>
-            </tr>
-             <tr>
-                <td class="nombre"> Martillo </td>
-                <td class="disponibilidad"> <span class="label label-success"> Disponible </span></td>
-                <td> <span class="badge">16</span></td>
-                <td> #124ADSA</td>
-                <td> <button class="btn btn-labeled btn-purple btn-sm"><span class="btn-label"><span class="glyphicon glyphicon-edit"></span></span> Editar </button>
-<button class="btn btn-labeled btn-danger btn-sm"> <span class="btn-label"><span class="glyphicon glyphicon-remove"></span></span> Eliminar </button>
-                </td>
-            </tr>
-            <tr>
-                <td class="nombre"> Llave Inglesa </td>
-                <td class="disponibilidad"> <span class="label label-warning"> Dañado </span></td>
-                <td> <span class="badge"></span></td>
-                <td> #124ADSA</td>
-                <td> <button class="btn btn-labeled btn-purple btn-sm"><span class="btn-label"><span class="glyphicon glyphicon-edit"></span></span> Editar </button>
-<button class="btn btn-labeled btn-danger btn-sm"> <span class="btn-label"><span class="glyphicon glyphicon-remove"></span></span> Eliminar </button>
-                </td>
-            </tr>
-              <tr>
-                <td class="nombre"> Prensa </td>
-                <td class="disponibilidad"> <span class="label label-info"> Prestado </span></td>
-                <td> <span class="badge"></span></td>
-                <td> #124ADSA</td>
-                <td> <button class="btn btn-labeled btn-purple btn-sm"><span class="btn-label"><span class="glyphicon glyphicon-edit"></span></span> Editar </button>
-<button class="btn btn-labeled btn-danger btn-sm"> <span class="btn-label"><span class="glyphicon glyphicon-remove"></span></span> Eliminar </button>
-                </td>
-            </tr>
-                 <tr id="h_1">
-                    <td class="nombre"> Za </td>
-                    <td class="disponibilidad"> <span class="label label-danger">No disponible </span></td>
-                    <td> <span class="badge">0</span></td>
-                    <td> #124ADSA</td>
-                    <td> <button id="btn-editar" class="btn btn-labeled btn-purple btn-sm"><span class="btn-label"><span class="glyphicon glyphicon-edit"></span></span> Editar </button>
-<button id="btn-borrar" class="btn btn-labeled btn-danger btn-sm"> <span class="btn-label"><span class="glyphicon glyphicon-remove"></span></span> Eliminar </button>
-                </td>
-            </tr>
+        <!--<table class="table">-->
+          <!--<thead>-->
+              <!--[>Titulo de la tabla<]-->
+              <!--<tr>-->
+                <!--<th>Nombre</th>-->
+                <!--<th>Estado</th>-->
+                <!--<th>Cantidad</th>-->
+                <!--<th>Serial</th>-->
+                <!--<th></th>-->
+                <!--</tr>-->
+            <!--</thead>        -->
+             <!--[>Contenido de la tabla (dinámico) <]-->
+            <!--<tbody class="list">-->
+            <!--<tr>-->
+                <!--<td class="nombre"> Destornillador Estrella </td>-->
+                <!--<td class="disponibilidad"> <span class="label label-danger">No disponible </span></td>-->
+                <!--<td class="cantidad"> <span class="badge">0</span></td>-->
+                <!--<td> #124ADSA</td>-->
+                <!--<td> <button class="btn btn-labeled btn-purple btn-sm"><span class="btn-label"><span class="glyphicon glyphicon-edit"></span></span> Editar </button>-->
+<!--<button class="btn btn-labeled btn-danger btn-sm"> <span class="btn-label"><span class="glyphicon glyphicon-remove"></span></span> Eliminar </button>-->
+                <!--</td>-->
+            <!--</tr>-->
+             <!--<tr>-->
+                <!--<td class="nombre"> Martillo </td>-->
+                <!--<td class="disponibilidad"> <span class="label label-success"> Disponible </span></td>-->
+                <!--<td> <span class="badge">16</span></td>-->
+                <!--<td> #124ADSA</td>-->
+                <!--<td> <button class="btn btn-labeled btn-purple btn-sm"><span class="btn-label"><span class="glyphicon glyphicon-edit"></span></span> Editar </button>-->
+<!--<button class="btn btn-labeled btn-danger btn-sm"> <span class="btn-label"><span class="glyphicon glyphicon-remove"></span></span> Eliminar </button>-->
+                <!--</td>-->
+            <!--</tr>-->
+            <!--<tr>-->
+                <!--<td class="nombre"> Llave Inglesa </td>-->
+                <!--<td class="disponibilidad"> <span class="label label-warning"> Dañado </span></td>-->
+                <!--<td> <span class="badge"></span></td>-->
+                <!--<td> #124ADSA</td>-->
+                <!--<td> <button class="btn btn-labeled btn-purple btn-sm"><span class="btn-label"><span class="glyphicon glyphicon-edit"></span></span> Editar </button>-->
+<!--<button class="btn btn-labeled btn-danger btn-sm"> <span class="btn-label"><span class="glyphicon glyphicon-remove"></span></span> Eliminar </button>-->
+                <!--</td>-->
+            <!--</tr>-->
+              <!--<tr>-->
+                <!--<td class="nombre"> Prensa </td>-->
+                <!--<td class="disponibilidad"> <span class="label label-info"> Prestado </span></td>-->
+                <!--<td> <span class="badge"></span></td>-->
+                <!--<td> #124ADSA</td>-->
+                <!--<td> <button class="btn btn-labeled btn-purple btn-sm"><span class="btn-label"><span class="glyphicon glyphicon-edit"></span></span> Editar </button>-->
+<!--<button class="btn btn-labeled btn-danger btn-sm"> <span class="btn-label"><span class="glyphicon glyphicon-remove"></span></span> Eliminar </button>-->
+                <!--</td>-->
+            <!--</tr>-->
+                 <!--<tr id="h_1">-->
+                    <!--<td class="nombre"> Za </td>-->
+                    <!--<td class="disponibilidad"> <span class="label label-danger">No disponible </span></td>-->
+                    <!--<td> <span class="badge">0</span></td>-->
+                    <!--<td> #124ADSA</td>-->
+                    <!--<td> <button id="btn-editar" class="btn btn-labeled btn-purple btn-sm"><span class="btn-label"><span class="glyphicon glyphicon-edit"></span></span> Editar </button>-->
+<!--<button id="btn-borrar" class="btn btn-labeled btn-danger btn-sm"> <span class="btn-label"><span class="glyphicon glyphicon-remove"></span></span> Eliminar </button>-->
+                <!--</td>-->
+            <!--</tr>-->
 
-            </tbody>
-        </table>
+            <!--</tbody>-->
+        <!--</table>-->
         <!--Paginacion dinamica con JS -->
-        <div class="text-center"><ul class="pagination pagination-sm"></ul></div> 
+       <!-- <div class="text-center"><ul class="pagination pagination-sm"></ul></div> -->
+        <?php include "mostrar_tabla.php";?>
     </div>
 </div>
 
@@ -176,9 +179,9 @@
 
 <!--Declaraciones Javascript -->
 <script src="../js/jquery-3.1.1.min.js"></script>
-<script src="../js/notify.min.js"></script>
 <script src="../js/bootstrap.min.js"></script>
 <script src="../js/jasny-bootstrap.min.js"></script>
+<script src="../js/bootstrap-notify.min.js"></script>
 <script src="../js/list.min.js"></script>
 <script src="../js/list.pagination.min.js"></script>
 <script src="../js/busqueda_herramientas.js"></script>
