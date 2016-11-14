@@ -108,8 +108,6 @@ if (isset($_GET["loginstatus"])){
     },
     {
         type:"success",
-        delay:20000,
-        timer:10000,
         placement:{
             from:"top",
             align:"center"}

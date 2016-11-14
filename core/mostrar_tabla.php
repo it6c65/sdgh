@@ -1,7 +1,6 @@
 <?php
 include "config.php";
 $mostrar = mysql_query("select * from ".$tabla_h, $conex) or die("Ha ocurrido un error".mysql_error());
-$total_h = mysql_num_rows($mostrar);
 //Abrir tabla
 echo "<table class='table'>";
 //Encabezado de tabla
@@ -40,7 +39,7 @@ echo " <thead>
             echo '<td> #'.$fila["num_serial"].'</td>';
 //Botones de Accion (Editar y Borrar) de la tabla
             echo '<td> <button class="btn btn-labeled btn-purple btn-sm"><span class="btn-label"><span class="glyphicon glyphicon-edit"></span></span> Editar </button>
-<button id="btn-borrar'.$fila["id_herramientas"].'" class="btn btn-labeled btn-danger btn-sm"> <span class="btn-label"><span class="glyphicon glyphicon-remove"></span></span> Eliminar </button>
+<button id="btn-borrar'.$fila["id_herramientas"].'" class="btn btn-labeled btn-danger btn-sm" data-toggle="modal"> <span class="btn-label"><span class="glyphicon glyphicon-remove"></span></span> Eliminar </button>
                 </td>';
         }
         print "</tr>";
@@ -49,4 +48,7 @@ echo '</tbody>
     <!--Paginacion dinamica con JS -->
     <div class="text-center"><ul class="pagination pagination-sm"></ul></div> 
     </div>';
+mysql_free_result($mostrar);
+mysql_close($conex);
+
 ?>

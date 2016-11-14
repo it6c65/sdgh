@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="../css/jasny-bootstrap.min.css">
     <link rel="stylesheet" href="../css/index.css">
     <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/animate.min.css">
     <link rel="icon" href="../imgs/favicon.png">
     <title>Herramientas en el Sistema</title>
 </head>
@@ -165,13 +166,25 @@
         <!--</table>-->
         <!--Paginacion dinamica con JS -->
        <!-- <div class="text-center"><ul class="pagination pagination-sm"></ul></div> -->
-        <?php include "mostrar_tabla.php";?>
+            <?php include "mostrar_tabla.php";?>
+        </div>
     </div>
 </div>
 
-
-</div>
-
+<!--<div id="confirm-borrado" class="modal fade" tabindex=-1 role="dialog" aria-labelledby="Confirmar-borrado">-->
+    <!--<div class="modal-dialog modal-sm" role="document">-->
+               <!--<div class="modal-content text-center">-->
+                 <!--<div class="modal-header">-->
+                            <!--<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>-->
+                            <!--<h2 class="modal-title text-danger">¿Seguro?</h2>-->
+                    <!--</div>-->
+            <!--<div class="modal-body">-->
+                    <!--<button id="yes-borrado" class="btn btn-danger"> Sí</button>-->
+                    <!--<button class="btn btn-default" data-dismiss="modal"> No</button>-->
+                <!--</div>-->
+            <!--</div>-->
+   <!--</div>-->
+<!--</div>-->
 
 
 </div>
@@ -185,5 +198,8 @@
 <script src="../js/list.min.js"></script>
 <script src="../js/list.pagination.min.js"></script>
 <script src="../js/busqueda_herramientas.js"></script>
+<?php
+include "admin_tools.php";
+?>
 </body>
 </html>
