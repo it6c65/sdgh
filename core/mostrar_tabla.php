@@ -38,7 +38,7 @@ echo " <thead>
 //Numero de Serial de la herramienta
             echo '<td> #'.$fila["num_serial"].'</td>';
 //Botones de Accion (Editar y Borrar) de la tabla
-            echo '<td> <button class="btn btn-labeled btn-purple btn-sm"><span class="btn-label"><span class="glyphicon glyphicon-edit"></span></span> Editar </button>
+            echo '<td> <button id="btn-editar'.$fila["id_herramientas"].'" class="btn btn-labeled btn-purple btn-sm" data-toggle="modal"><span class="btn-label"><span class="glyphicon glyphicon-edit"></span></span> Editar </button>
 <button id="btn-borrar'.$fila["id_herramientas"].'" class="btn btn-labeled btn-danger btn-sm" data-toggle="modal"> <span class="btn-label"><span class="glyphicon glyphicon-remove"></span></span> Eliminar </button>
                 </td>';
         }

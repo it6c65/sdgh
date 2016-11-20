@@ -171,20 +171,46 @@
     </div>
 </div>
 
-<!--<div id="confirm-borrado" class="modal fade" tabindex=-1 role="dialog" aria-labelledby="Confirmar-borrado">-->
-    <!--<div class="modal-dialog modal-sm" role="document">-->
-               <!--<div class="modal-content text-center">-->
-                 <!--<div class="modal-header">-->
-                            <!--<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>-->
-                            <!--<h2 class="modal-title text-danger">¿Seguro?</h2>-->
-                    <!--</div>-->
-            <!--<div class="modal-body">-->
-                    <!--<button id="yes-borrado" class="btn btn-danger"> Sí</button>-->
-                    <!--<button class="btn btn-default" data-dismiss="modal"> No</button>-->
-                <!--</div>-->
-            <!--</div>-->
-   <!--</div>-->
-<!--</div>-->
+<div id="confirm-editar" class="modal fade" tabindex=-1 role="dialog" aria-labelledby="Confirmar-borrado">
+    <div class="modal-dialog" role="document">
+               <div class="modal-content text-center">
+                 <div class="modal-header bg-info">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h2 class="modal-title text-info">Editando Herramienta</h2>
+                    </div>
+            <div class="modal-body bg-info">
+                <form action="" method="post" >
+                    <div class="form-group">
+                        <label for="nomb_h">Nombre de la Herramienta</label>
+                        <input type="text" name="nomb_h" id="name_h" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="cantidad_h">Cantidad de Herramientas</label>
+                        <input type="number" name="cantidad_h" id="number_h" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="seriales_h">Numero de serial de la herramienta</label>
+                        <input type="text" name="seriales_h" id="serial_h" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="estado_h">Estado de la herramienta</label>
+                        <select id="status_h" name="estado_h" class="form-control">
+                            <option value="0">Excelente Estado</option>
+                            <option value="1">Reportar como dañado</option>
+                            <option value="2">Anunciar que la herramienta fue dada a otro ente</option>
+                        </select>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="form-group">
+                    <button id="yes-edit" class="btn btn-primary">Confirmar cambios</button>
+                    <button class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                    </div>   
+                </form>
+                </div>
+            </div>
+   </div>
+</div>
 
 
 </div>
