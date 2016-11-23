@@ -46,6 +46,19 @@ while ($fila = mysql_fetch_assoc($mostrar)){
             echo '});';
         echo '});';
     echo '});';
+//Acciones del Editar
+echo '$("#btn-editar'.$fila["id_herramientas"].'").click(function(){';
+//Abrir Modal
+echo '    $("#confirm-editar").modal("show");';
+//Ajax para solicitar los nombres
+echo '    $.post("../core/editar.php",{herramienta:'.$fila["id_herramientas"].'},function(result,status){';
+echo '        resultado=JSON.parse(result);';
+echo '        $("#name_h").attr("value",resultado[1]);';
+echo '        $("#number_h").attr("value",resultado[2]);';
+echo '        document.getElementById("status_h").selectedIndex = resultado[3];';
+echo '        $("#serial_h").attr("value",resultado[4])';
+echo '    });';
+echo '});';
     echo '</script>';
 }
 mysql_free_result($mostrar);
