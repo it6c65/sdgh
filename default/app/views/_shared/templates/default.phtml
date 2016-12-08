@@ -2,23 +2,20 @@
 <html lang="es">
  <head>
   <meta charset=<?= APP_CHARSET ?> >
-  <title>KumbiaPHP Framework</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <?php Tag::css('kumbia') ?>
+  <title>Sistema de Gestion de Herramientas</title>
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <?php Html::headLink('favicon.png', "rel='icon'") ?>
+  <?= Html::includeHeadLinks() ?>
+  <?php Tag::css('index') ?>
+  <?php Tag::css('bootstrap.min') ?>
   <?= Html::includeCss() ?>
 </head>
 <body>
 <div class="container">
-  <header class="row">
-      <div class="col-8">
-        <?= Html::img('kumbiaphp.svg', 'KumbiaPHP logo') ?>
-      </div>
-      <div class="col-4 text-right">
-          App: <strong><?= basename(dirname(APP_PATH)) ?></strong> (<?= PRODUCTION ? 'Production' : 'Development' ?>)
-      </div>
-  </header>
-  <?php View::content() ?>
-  <?php View::partial('kumbia/footer') ?>
+    <?php View::content() ?>
+    <?= Tag::js('jquery.min') ?>
+    <?= Tag::js('bootstrap.min') ?>
+    <?= Tag::js('jasny-bootstrap.min') ?>
 </div>
 </body>
 </html>

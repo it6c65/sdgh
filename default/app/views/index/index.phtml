@@ -1,17 +1,71 @@
-    <div class="hero">
-		<h2>KumbiaPHP <?= kumbia_version() ?> está listo para usarse</h2>
-        <h3>Bienvenido a KumbiaPHP Framework</h3>
-        <p>El framework ya está listo para desarrollar aplicaciones web con PHP, rápida y fácilmente, sin tener que reinventar la rueda, y preocupándose por lo más importante, la lógica de su aplicación.</p>
-       <?= Html::link('pages/show/kumbia/status/', 'Ver Config', 'title="Ver configuración de la aplicación" class="btn btn-info"') ?>
-    </div>
-    <h2>Cómo empezar</h2>
-    <p>En nuestra <a href="http://wiki.kumbiaphp.com/">wiki</a> podrás encontrar información actualizada sobre el uso del framework,
-    si estas comenzando con <em>KumbiaPHP</em> deberías realizar  la
-    <strong><a href="http://wiki.kumbiaphp.com/Hola_Mundo_KumbiaPHP_Framework">Aplicación Hola Mundo</a></strong>.</p>
-    <p>También puede interesarte saber sobre:</p>
-	<ul>
-		<li><a href="http://wiki.kumbiaphp.com/Beta2_CRUD_en_KumbiaPHP_Framework">Creacion de CRUD(Create, Read, Update, Delete)</a></h3></li>
-		<li><a href="http://wiki.kumbiaphp.com/Como_Usar_los_Modelos_en_KumbiaPHP">Uso de modelos</a></li>
-		<li><a href="http://wiki.kumbiaphp.com/KumbiaPHP_Framework_Versi%C3%B3n_1.0_Spirit#databases.ini">Configurar conexiones a bases de datos</a></li>
-	</ul>
-	<p>Estos son sólo algunos ejemplos, puedes ver más en la <a href="http://wiki.kumbiaphp.com/Categor%C3%ADa:Tutoriales_KumbiaPHP" title="Tutoriales KumbiaPHP">sección de tutoriales de la wiki</a></p>    
+<!-- Encabezadp del login-->
+<header class="jumbotron text-center">
+    <div class="container"><h1 class="hidden-xs">Sistema de Gestion de Herramientas </h1>
+        <br>
+    <?= Html::img('iutag-logo.png', "logo") ?>
+    </div>   
+</header>
+<br>
+<div class="container">
+   <div class="row">
+       <div class="tabpanel col-xs-12 col-xs-offset-0 col-sm-3 col-sm-2 col-md-6 col-md-offset-3">
+           <!-- Pestañas del login -->
+           <ul class="nav nav-tabs" role="tablist">
+                <!-- Acceso como usuario normal -->
+               <li role="presentation" class="active">
+                   <a href="#user" aria-controls="home" role="tab" data-toggle="tab"> 
+                       <span class="glyphicon glyphicon-home"></span> Usuario
+                   </a>
+               </li>
+               <!-- Acceso como Administrador -->
+               <li role="presentation"><a href="#admin" aria-controls="admin" role="tab" data-toggle="tab"> 
+                       <span class="glyphicon glyphicon-cog"> Administrador </span>
+                   </a>
+               </li>
+           </ul>
+           <!-- Contenido de las pestañas del login -->
+           <div class="tab-content">
+                <!--Contenido del login de Usuario-->
+               <div class="tab-pane active " id="user">
+                   <?= Form::open(); ?>
+                        <!-- Input con Icono-->
+                       <div class="form-group input-group">
+                           <span class="input-group-addon hidden-xs"> <span class="glyphicon glyphicon-user"></span> </span>
+                           <?= Form::text("usuario",' class="form-control" placeholder="Usuario" ') ?>
+                        </div>                           
+                        <!-- Input con Icono-->
+                        <div class="form-group input-group">
+                            <span class="input-group-addon hidden-xs"> <span class="glyphicon glyphicon-lock"></span> </span>
+                           <?= Form::pass("clave",'class="form-control" placeholder="Contraseña"'); ?>
+                        </div>                      
+                        <br> 
+                          <div class="form-group text-center">
+                              <button type="submit" class="btn btn-primary">Entrar <span class="glyphicon glyphicon-send"></span> </button>
+                          </div>
+                  <?= Form::close(); ?>
+               </div>
+                <!-- Contenido del login de Administrador -->
+               <div class="tab-pane" id="admin">
+                   <?= Form::open(); ?>
+                        <?= Form::hidden("usuario", "readonly" , "admin" ) ?>
+                        <!-- Input con icono y boton -->
+                       <div class="form-group input-group">
+                           <span class="input-group-addon hidden-xs"> <span class="glyphicon glyphicon-lock"></span> </span>
+                            <?= Form::pass("clave",'class="form-control" placeholder="Contraseña del Administrador "'); ?>
+                           <span class="input-group-btn hidden-xs">
+                               <button type="submit" class="btn btn-primary">
+                                   Entrar
+                                   <span class="glyphicon glyphicon-send"></span> 
+                               </button>
+                           </span>
+                       </div>
+                       <div class="form-group visible-xs-12 visible-xs-block text-center">
+                                   <button type="submit" class="btn btn-primary"> Entrar <span class="glyphicon glyphicon-send"></span></button>
+                         </div>
+
+                  <?= Form::close(); ?>
+               
+               </div>
+           </div>
+        </div>
+   </div>
