@@ -7,16 +7,23 @@
   <?php Html::headLink('favicon.png', "rel='icon'") ?>
   <?= Html::includeHeadLinks() ?>
   <?php Tag::css('index') ?>
+  <?php Tag::css('base') ?>
   <?php Tag::css('bootstrap.min') ?>
+  <?php Tag::css('jasny-bootstrap.min') ?>
   <?= Html::includeCss() ?>
 </head>
 <body>
-<div class="container">
-    <?php View::content() ?>
+<!-- Contenedor -->
+<div class="main container-fluid">
+    <div class="row">
+        <?php View::content() ?>
+    </div>
 </div>
 <?= Tag::js('jquery.min') ?>
-<?= Tag::js('notify.min') ?>
 <?= Tag::js('bootstrap.min') ?>
 <?= Tag::js('jasny-bootstrap.min') ?>
+<?= Tag::js('list.min') ?>
+<?= Tag::js('list.pagination.min') ?>
+<?= Tag::js('busqueda_herramientas') ?>
 </body>
 </html>

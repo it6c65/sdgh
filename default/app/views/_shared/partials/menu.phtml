@@ -1,0 +1,22 @@
+ <!-- Columna 1 -->
+<div class="container col-md-3">
+    <nav class="navmenu navmenu-default navmenu-fixed-left offcanvas-sm" role="navigation" id="menu-principal">
+        <a class="navmenu-brand text-center" href="#">
+        <?= Html::img("iutag-logo.png","logo") ?>
+         <div class="hidden-md hidden-lg visible-sm-12 visible-xs-12">
+            <button class="btn-slider btn btn-menu btn-lg " data-toggle="offcanvas" data-target="#menu-principal" data-canvas="body">
+                Volver <span class="glyphicon glyphicon-share-alt"></span>
+            </button>
+        </div>
+    <!-- Menu vertical -->
+        </a>
+        <ul class="nav navmenu-nav">
+        <li class=<?= $activo ?> ><?= Html::link("home", '<span class="glyphicon glyphicon-record"></span> Home' ); ?></li>
+        <li class=<?= $activo2 ?> ><?= Html::link("home/doc", '<span class="glyphicon glyphicon-exclamation-sign"></span> Informacion' ); ?> </li>
+        <li class=<?= $activo3 ?> ><?= Html::link("home/herramientas",'<span class="glyphicon glyphicon-wrench"></span> Herramientas'); ?> </li>
+        <li class=<?= $activo4 ?> ><?= Html::link("home/materiales",'<span class="glyphicon glyphicon-book"></span> Materiales'); ?> </li>
+        <li class=<?= $activo5 ?> ><?= Html::link("exit.php",'<span class="glyphicon glyphicon-log-out"></span> Salir'); ?> </li>
+        </ul>
+    </nav>
+</div>
+
