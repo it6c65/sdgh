@@ -14,43 +14,9 @@
         </div>
     </div>
     <br>
-    <!--Boton de Agregar-->
-    <button class="btn btn-labeled btn-success btn-sm" data-toggle="collapse" data-target="#agregar_h" aria-expanded="false" aria-controls="agregar_h"><span class="btn-label"><span class="glyphicon glyphicon-plus"></span></span> <strong>Agregar Herramienta</strong></button>
+<?php View::partial("modals/agregar_herramienta") ?>
     <button class="sort btn btn-default btn-sm" data-sort="nombre"> <span class="glyphicon glyphicon-sort"></span> Ordenar por nombre</button>
     <button class="sort btn btn-default btn-sm" data-sort="disponibilidad"> <span class="glyphicon glyphicon-sort"></span> Ordenar por Estado</button>
-     <!--Menu de Agregar-->
-    <div id="agregar_h" class="collapse">
-        <div class="row">
-            <form action="" class="bg-success">
-                <div class="form-group col-md-6">
-                    <label for="nom_h" class="control-label">Nombre: </label>
-                    <input type="text" class="form-control input-sm" id="nom_h">
-                </div>
-                <div class="clearfix"></div>
-                <div class="form-group col-md-6">
-                    <label for="cantidad">Cantidad: </label>
-                    <input type="number" class="form-control input-sm" id="cantidad">
-                </div>
-                <div class="clearfix"></div>
-                <div class="form-group col-md-6">
-                    <label for="serial">Serial de la Herramienta: </label>
-                    <input type="text" class="form-control input-sm" data-mask="wwwwww" id="serial">
-                </div>
-                <div class="clearfix"></div>
-                <div class="form-group col-md-6">
-                    <label for="estado"> Estado de la Herramienta: </label>
-                    <select id="estado" name="estado_h" class="form-control input-sm">
-                        <option value="0">Excelente estado</option>
-                        <option value="1">Reportar herramienta como dañada</option>
-                        <option value="2">Anunciar que la herramienta fue dada a otro ente</option>
-                    </select>
-                </div>
-                <div class="clearfix"></div>
-                <div class="form-group col-md-6 text-center">
-                    <button class="btn btn-success btn-sm btn-labeled">Enviar<span class="btn-label btn-label-right"><span class="glyphicon glyphicon-send"></span></span></button></div>
-            </form>
-        </div>
-    </div>
 <br>
 <br>
     <div class="table-responsive">
@@ -71,20 +37,22 @@
             <tr>
                 <td class="nombre"> <?= $item->nombre ?></td>
                 <td class="cantidad"> <span class="badge"><?= $item->num ?></span></td>
-<?php //Estados de la herramienta
-             if($item->num==0){
-                echo '<td class="disponibilidad"> <span class="label label-danger">No disponible </span></td>';
-// 1 = Disponible
-             }else if($item->status==1){
-                echo '<td class="disponibilidad"> <span class="label label-success">Disponible </span></td>';
-// 2 = Dañado
-             }else if($item->status==2){
-                echo '<td class="disponibilidad"> <span class="label label-warning">Dañado</span></td>';
-// 3 = Prestada
-             }else if($item->status==3){
-                echo '<td class="disponibilidad"> <span class="label label-info">Prestado</span></td>';
-             }
-?>
+                <!-- Estados de la herramienta -->
+                <?php if($item->num==0) : ?> 
+                    <td class="disponibilidad"> <span class="label label-danger">No disponible </span></td>
+                 <!-- 1 = Disponible -->
+                <?php elseif($item->status==1): ?>
+                    <td class="disponibilidad"> <span class="label label-success">Disponible </span></td>
+                 <!-- 2 = Dañado -->
+                <?php elseif($item->status==2): ?>
+                    <td class="disponibilidad"> <span class="label label-warning">Dañado</span></td>
+                 <!-- 3 = Prestada -->
+                <?php elseif($item->status==3): ?>
+                    <td class="disponibilidad"> <span class="label label-info">Prestado</span></td>
+                <!-- Cualquier otro estado es que no esta disponible -->
+                <?php else: ?>
+                    <td class="disponibilidad"> <span class="label label-danger">No disponible </span></td>
+                <?php endif; ?>
                 <td> <span style="color:navy;">#</span><em><?= $item->serial ?></em> </td>
                 <td> <button id="btn-editar-<?= $item->serial ?>" class="btn btn-labeled btn-purple btn-sm"><span class="btn-label"><span class="glyphicon glyphicon-edit"></span></span> Editar </button>
                 <button id="btn-borrar-<?= $item->serial ?>" class="btn btn-labeled btn-danger btn-sm"> <span class="btn-label"><span class="glyphicon glyphicon-remove"></span></span> Eliminar </button>
