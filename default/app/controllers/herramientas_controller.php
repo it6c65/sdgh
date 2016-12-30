@@ -1,10 +1,10 @@
 <?php
 Load::models("herramientas");
+View::template(NULL);
+View::select(NULL);
 Class HerramientasController extends AppController{
 
     public function crear(){
-        View::template(NULL);
-        View::select(NULL);
         if(Input::hasPost("herramientas")){
             $h = new herramientas(Input::post("herramientas"));
             if(!$h->save()){
@@ -18,8 +18,6 @@ Class HerramientasController extends AppController{
     }
 
     public function editar($id){
-        View::template(NULL);
-        View::select(NULL);
         Load::model("herramientas");
         $h = new Herramientas();
         if(Input::hasPost("herramientas")){
@@ -35,15 +33,12 @@ Class HerramientasController extends AppController{
     }
 
     public function borrar($id){
-        View::template(NULL);
-        View::select(NULL);
-        Load::model("herramientas");
         $h = new Herramientas();
         if(!$h->delete((int)$id)){
             Flash::error("FALLO :S");
         }else{
             Flash::valid("Exito!");
         }
-        return Router::redirect("home/herramientas");
+        Redirect::to("home/herramientas");
     }
 }

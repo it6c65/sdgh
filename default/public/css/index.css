@@ -44,6 +44,6 @@ background-color:purple;
 color:white;
 }
 .btn-purple:hover{
-color:white;
+color:white !important;
 background-color:navy;
 }

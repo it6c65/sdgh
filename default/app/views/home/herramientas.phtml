@@ -1,4 +1,4 @@
-<?php View::partial("menu", FALSE, array( "activo3" => "active" )) ?>
+<?php View::partial("menu", FALSE, array( "activo3" => 'class="active"' )) ?>
 <?php View::partial("responsive") ?>
 <!--Encabezado de la pagina -->
 <div class="page-header text-center">
@@ -14,7 +14,7 @@
         </div>
     </div>
     <br>
-<?php View::partial("modals/agregar_herramienta") ?>
+    <?php View::partial("modals/agregar_herramienta") ?>
     <button class="sort btn btn-default btn-sm" data-sort="nombre"> <span class="glyphicon glyphicon-sort"></span> Ordenar por nombre</button>
     <button class="sort btn btn-default btn-sm" data-sort="disponibilidad"> <span class="glyphicon glyphicon-sort"></span> Ordenar por Estado</button>
 <br>
@@ -38,7 +38,7 @@
                 <td class="nombre"> <?= $item->nombre ?></td>
                 <td class="cantidad"> <span class="badge"><?= $item->num ?></span></td>
                 <!-- Estados de la herramienta -->
-                <?php if($item->num==0) : ?> 
+                <?php if($item->num==0) : ?>  
                     <td class="disponibilidad"> <span class="label label-danger">No disponible </span></td>
                  <!-- 1 = Disponible -->
                 <?php elseif($item->status==1): ?>
@@ -54,15 +54,16 @@
                     <td class="disponibilidad"> <span class="label label-danger">No disponible </span></td>
                 <?php endif; ?>
                 <td> <span style="color:navy;">#</span><em><?= $item->serial ?></em> </td>
-                <td> <button id="btn-editar-<?= $item->serial ?>" class="btn btn-labeled btn-purple btn-sm"><span class="btn-label"><span class="glyphicon glyphicon-edit"></span></span> Editar </button>
-                <button id="btn-borrar-<?= $item->serial ?>" class="btn btn-labeled btn-danger btn-sm"> <span class="btn-label"><span class="glyphicon glyphicon-remove"></span></span> Eliminar </button>
+                <td> 
+                    <?php $para_editar = array( "id_h" => $item->id, "nombre" => $item->nombre, "cantidad" => $item->num, "serial" => $item->serial, "num_status" => $item->status ); ?>
+                    <?php View::partial("modals/editar_h", FALSE, $para_editar) ?>
+                    <?php View::partial("modals/eliminar", FALSE, array( "id_h" => $item->id )) ?>
                 </td>
-            </tr>
+            </tr> 
 <?php endforeach; ?>
             </tbody>
         </table>
          <!--Paginacion dinamica con JS -->
             <div class="text-center"><ul class="pagination pagination-sm"></ul></div> 
     </div>
-
 </div>
