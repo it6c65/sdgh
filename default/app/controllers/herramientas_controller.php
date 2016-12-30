@@ -10,25 +10,20 @@ Class HerramientasController extends AppController{
             if(!$h->save()){
                 Flash::error("FALLO :S");
             }else{
-                Flash::valid("Exito!");
                 Input::delete();
                 Redirect::to("home/herramientas");
             }
         }
     }
 
-    public function editar($id){
-        Load::model("herramientas");
+    public function editar(){
         $h = new Herramientas();
         if(Input::hasPost("herramientas")){
             if(!$h->update(Input::post("herramientas"))){
                 Flash::error("FALLO :S");
             }else{
-                Flash::valid("Exito!");
-                return Router::redirect("home/herramientas");
+                Redirect::to("home/herramientas");
             }
-        }else{
-            $this->h = $h->find((int)$id);
         }
     }
 
@@ -37,8 +32,7 @@ Class HerramientasController extends AppController{
         if(!$h->delete((int)$id)){
             Flash::error("FALLO :S");
         }else{
-            Flash::valid("Exito!");
+            Redirect::to("home/herramientas");
         }
-        Redirect::to("home/herramientas");
     }
 }
