@@ -11,7 +11,7 @@ Class HerramientasController extends AppController{
                 Flash::error("FALLO :S");
             }else{
                 Input::delete();
-                Redirect::to("home/herramientas");
+                Redirect::to("admin/herramientas");
             }
         }
     }
@@ -22,7 +22,7 @@ Class HerramientasController extends AppController{
             if(!$h->update(Input::post("herramientas"))){
                 Flash::error("FALLO :S");
             }else{
-                Redirect::to("home/herramientas");
+                Redirect::to("admin/herramientas");
             }
         }
     }
@@ -32,7 +32,7 @@ Class HerramientasController extends AppController{
         if(!$h->delete((int)$id)){
             Flash::error("FALLO :S");
         }else{
-            Redirect::to("home/herramientas");
+            Redirect::to("admin/herramientas");
         }
     }
 }

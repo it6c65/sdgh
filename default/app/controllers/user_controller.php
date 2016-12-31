@@ -1,6 +1,6 @@
 <?php
 View::template("home");
-class HomeController extends AppController {
+class UserController extends AppController {
 
     public function index() {
         $this->hola="hola mundo!!!";
