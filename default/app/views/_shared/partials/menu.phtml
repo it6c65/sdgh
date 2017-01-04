@@ -11,11 +11,28 @@
     <!-- Menu vertical -->
         </a>
         <ul class="nav navmenu-nav">
-        <li <?= $activo ?> ><?= Html::link("home", '<span class="glyphicon glyphicon-record"></span> Home' ); ?></li>
-        <li <?= $activo2 ?> ><?= Html::link("home/doc", '<span class="glyphicon glyphicon-exclamation-sign"></span> Informacion' ); ?> </li>
-        <li <?= $activo3 ?> ><?= Html::link("home/herramientas",'<span class="glyphicon glyphicon-wrench"></span> Herramientas'); ?> </li>
-        <li <?= $activo4 ?> ><?= Html::link("home/materiales",'<span class="glyphicon glyphicon-book"></span> Materiales'); ?> </li>
-        <li <?= $activo5 ?> ><?= Html::link("exit.php",'<span class="glyphicon glyphicon-log-out"></span> Salir'); ?> </li>
+<?php if($activo=="home"): ?>
+        <li class="active"><?= Html::link("admin", '<span class="glyphicon glyphicon-record"></span> Home' ); ?></li>
+        <li><?= Html::link("admin/doc", '<span class="glyphicon glyphicon-exclamation-sign"></span> Informacion' ); ?> </li>
+        <li><?= Html::link("admin/herramientas",'<span class="glyphicon glyphicon-wrench"></span> Herramientas'); ?> </li>
+        <li><?= Html::link("admin/materiales",'<span class="glyphicon glyphicon-book"></span> Materiales'); ?> </li>
+<?php elseif($activo=="doc"): ?>
+        <li><?= Html::link("admin", '<span class="glyphicon glyphicon-record"></span> Home' ); ?></li>
+        <li class="active"><?= Html::link("admin/doc", '<span class="glyphicon glyphicon-exclamation-sign"></span> Informacion' ); ?> </li>
+        <li><?= Html::link("admin/herramientas",'<span class="glyphicon glyphicon-wrench"></span> Herramientas'); ?> </li>
+        <li><?= Html::link("admin/materiales",'<span class="glyphicon glyphicon-book"></span> Materiales'); ?> </li>
+<?php elseif($activo=="herramientas"): ?>
+        <li><?= Html::link("admin", '<span class="glyphicon glyphicon-record"></span> Home' ); ?></li>
+        <li><?= Html::link("admin/doc", '<span class="glyphicon glyphicon-exclamation-sign"></span> Informacion' ); ?> </li>
+        <li class="active"><?= Html::link("admin/herramientas",'<span class="glyphicon glyphicon-wrench"></span> Herramientas'); ?> </li>
+        <li><?= Html::link("admin/materiales",'<span class="glyphicon glyphicon-book"></span> Materiales'); ?> </li>
+<?php elseif($activo=="materiales"): ?>
+        <li><?= Html::link("admin", '<span class="glyphicon glyphicon-record"></span> Home' ); ?></li>
+        <li><?= Html::link("admin/doc", '<span class="glyphicon glyphicon-exclamation-sign"></span> Informacion' ); ?> </li>
+        <li><?= Html::link("admin/herramientas",'<span class="glyphicon glyphicon-wrench"></span> Herramientas'); ?> </li>
+        <li class="active"><?= Html::link("admin/materiales",'<span class="glyphicon glyphicon-book"></span> Materiales'); ?> </li>
+<?php endif; ?>
+        <li  ><?= Html::link("auth/logout",'<span class="glyphicon glyphicon-log-out"></span> Salir'); ?> </li>
         </ul>
     </nav>
 </div>

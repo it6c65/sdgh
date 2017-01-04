@@ -27,16 +27,17 @@
            <div class="tab-content">
                 <!--Contenido del login de Usuario-->
                <div class="tab-pane active " id="user">
-                   <?= Form::open(); ?>
+                   <?= Form::open("auth/login"); ?>
+                        <input type="hidden" name="mode" value="auth">
                         <!-- Input con Icono-->
                        <div class="form-group input-group">
                            <span class="input-group-addon hidden-xs"> <span class="glyphicon glyphicon-user"></span> </span>
-                           <?= Form::text("usuario",' class="form-control" placeholder="Usuario" ') ?>
+                           <?= Form::text("login",' class="form-control" placeholder="Usuario" ') ?>
                         </div>                           
                         <!-- Input con Icono-->
                         <div class="form-group input-group">
                             <span class="input-group-addon hidden-xs"> <span class="glyphicon glyphicon-lock"></span> </span>
-                           <?= Form::pass("clave",'class="form-control" placeholder="Contraseña"'); ?>
+                           <?= Form::pass("password",'class="form-control" placeholder="Contraseña"'); ?>
                         </div>                      
                         <br> 
                           <div class="form-group text-center">
