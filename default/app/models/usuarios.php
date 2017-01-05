@@ -26,4 +26,7 @@ class Usuarios extends ActiveRecord{
     public function logout(){
         Auth2::factory("model")->logout();
     }
+    public function logged(){
+        Auth2::factory("model")->isValid();
+    }
 }

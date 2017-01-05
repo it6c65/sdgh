@@ -2,6 +2,12 @@
 View::template("home");
 class AdminController extends AppController {
 
+    protected function before_filter(){
+        if(!Load::model("usuarios")){
+            Redirect::to("index");
+        }
+    }
+
     public function index() {
         $this->hola="hola mundo!!!";
     }

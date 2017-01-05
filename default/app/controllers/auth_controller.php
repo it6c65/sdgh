@@ -4,7 +4,12 @@ class AuthController extends AppController {
         View::select(NULL);
         View::template(NULL);
         if(Load::model("usuarios")->login()){
-            Redirect::to("admin/index");
+            $user = Input::post("login");
+            if($user=="Admin"){
+                Redirect::to("admin/index");
+            }else{
+                Redirect::to("user/index");
+            }
         }
     }
     public function logout(){
