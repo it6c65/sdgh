@@ -17,11 +17,11 @@ width:100%;
         content: none;
     color: black !important;
 }
-#header-ah{
+#header-add{
 background-color:green;
 color:white;
 }
-#header-eh{
+#header-edit{
 background-color:#3465a4;
 color:white;
 }

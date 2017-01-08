@@ -1,0 +1,43 @@
+ <!--Boton de Agregar-->
+<button class="btn btn-labeled btn-success btn-sm" data-toggle="modal" data-target="#agregar_m" aria-expanded="false" aria-controls="agregar_m">
+<span class="btn-label">
+    <span class="glyphicon glyphicon-plus"></span>
+</span>
+<strong>Agregar Material</strong>
+</button>
+ <!--Menu de Agregar-->
+<div id="agregar_m" class="modal" tabindex="-1" role="dialog" aria-labelledby="AgregarMaterial">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header" id="header-add">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h2 class="modal-title text-center" id="title-agregarM"><strong>Agregar Material</strong></h2>
+            </div>
+            <div class="modal-body bg-success">
+                <?= Form::open("materiales/crear"); ?>
+                    <div class="form-group">
+                        <?= Form::label("Nombre: ", "materiales.nombre", 'class="control-label"' ); ?>
+                        <?= Form::text("materiales.nombre", 'class="form-control input-sm"' ); ?>
+                    </div>
+                    <div class="form-group">
+                        <?= Form::label("Cantidad: ", "materiales.num"); ?>
+                        <?= Form::input('number','materiales.num', 'class="form-control input-sm"'); ?>
+                    </div>
+                    <div class="form-group">
+                        <?= Form::label("Estado de las Herramientas:　", "materiales.status"); ?>
+                        <?php $status_m = array( 'Seleccione', 'Disponible' , 'No disponible' ); ?>
+                        <?= Form::select("materiales.status",$status_m, 'class="form-control input-sm"', 'Seleccione'); ?>
+                    </div>
+                    <div class="form-group text-center">
+                        <button class="btn btn-success btn-sm btn-labeled" type="submit">Enviar
+                            <span class="btn-label btn-label-right">
+                            <span class="glyphicon glyphicon-send"></span>
+                            </span>
+                        </button>
+                    </div>
+            </div>   
+         <?= Form::close(); ?>
+        </div>
+    </div>   
+</div>
+

@@ -21,12 +21,15 @@ class AppController extends Controller
     public $acl;
     /* Rol del usuario actual */
     public $userRol = "";
+    /* Nombre de usuario de la sesion actual */
+    public $name_user = "";
 
     final protected function initialize(){
         /* Instancio un usuario de la tabla usuarios */
         $usuario_actual = new Usuarios();
         /* Busco el id del usuario que inicio sesion */
         $usuario_actual->find(Session::get("id"));
+        $this->name_user = $usuario_actual->login;
         /* Si el usuario esta ya esta logueado determinar su rol en el ACL */
         if(Load::model("usuarios")->logged()) $this->userRol = $usuario_actual->nivel;
 
@@ -45,7 +48,7 @@ class AppController extends Controller
         $this->acl->allow("", "index", array("index"));
         $this->acl->allow("adm", "admin", array("index","herramientas","materiales","doc"));
         $this->acl->allow("adm", "herramientas", array("crear","editar","borrar"));
-        $this->acl->allow("usr", "user", array("index"));
+        $this->acl->allow("usr", "user", array("index","herramientas","materiales","doc"));
 
     }
 

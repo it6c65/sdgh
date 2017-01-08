@@ -1,4 +1,4 @@
-<?php View::partial("menu", FALSE, array( "activo3" => 'class="active"' )) ?>
+<?php View::partial("menu", FALSE, array( "activo" => 'herramientas' , "login" => "user" )) ?>
 <?php View::partial("responsive") ?>
 <!--Encabezado de la pagina -->
 <div class="page-header text-center">
@@ -6,7 +6,7 @@
 </div>
 <div class="row">
     <!--Buscador de herramientas/materiales-->
-    <div id="herramientas" class="col-xs-12 col-md-offset-1">
+    <div id="almacen" class="col-xs-12 col-md-offset-1">
         <div class="input-group col-xs-6 col-xs-offset-3 col-md-4 col-md-offset-7">
         <input type="text" class="search form-control input-sm" placeholder="Buscar...">
         <div class="input-group-btn">
@@ -14,7 +14,6 @@
         </div>
     </div>
     <br>
-    <?php View::partial("modals/agregar_herramienta") ?>
     <button class="sort btn btn-default btn-sm" data-sort="nombre"> <span class="glyphicon glyphicon-sort"></span> Ordenar por nombre</button>
     <button class="sort btn btn-default btn-sm" data-sort="disponibilidad"> <span class="glyphicon glyphicon-sort"></span> Ordenar por Estado</button>
 <br>
@@ -54,11 +53,6 @@
                     <td class="disponibilidad"> <span class="label label-danger">No disponible </span></td>
                 <?php endif; ?>
                 <td> <span style="color:navy;">#</span><em><?= $item->serial ?></em> </td>
-                <td> 
-                    <?php $para_editar = array( "id_h" => $item->id, "nombre" => $item->nombre, "cantidad" => $item->num, "serial" => $item->serial, "num_status" => $item->status ); ?>
-                    <?php View::partial("modals/editar_h", FALSE, $para_editar) ?>
-                    <?php View::partial("modals/eliminar", FALSE, array( "id_h" => $item->id )) ?>
-                </td>
             </tr> 
 <?php endforeach; ?>
             </tbody>

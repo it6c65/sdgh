@@ -16,7 +16,7 @@ class UserController extends AppController {
     }
 
     public function index() {
-        Flash::info("Estamos en la accion {$this->action_name} de {$this->userRol}");
+        Flash::info("Eres un {$this->name_user}");
     }
 
     public function doc() {
@@ -28,7 +28,7 @@ class UserController extends AppController {
     }
 
     public function materiales() {
-        $h = Load::model("materiales")->find_all_by_sql("select * from materiales");
+        $m = Load::model("materiales")->find_all_by_sql("select * from materiales");
         $this->material = $m;
 
     }

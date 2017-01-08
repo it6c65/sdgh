@@ -12,25 +12,25 @@
         </a>
         <ul class="nav navmenu-nav">
 <?php if($activo=="home"): ?>
-        <li class="active"><?= Html::link("admin", '<span class="glyphicon glyphicon-record"></span> Home' ); ?></li>
-        <li><?= Html::link("admin/doc", '<span class="glyphicon glyphicon-exclamation-sign"></span> Informacion' ); ?> </li>
-        <li><?= Html::link("admin/herramientas",'<span class="glyphicon glyphicon-wrench"></span> Herramientas'); ?> </li>
-        <li><?= Html::link("admin/materiales",'<span class="glyphicon glyphicon-book"></span> Materiales'); ?> </li>
+        <li class="active"><?= Html::link("$login", '<span class="glyphicon glyphicon-record"></span> Home' ); ?></li>
+        <li><?= Html::link("$login/doc", '<span class="glyphicon glyphicon-exclamation-sign"></span> Informacion' ); ?> </li>
+        <li><?= Html::link("$login/herramientas",'<span class="glyphicon glyphicon-wrench"></span> Herramientas'); ?> </li>
+        <li><?= Html::link("$login/materiales",'<span class="glyphicon glyphicon-book"></span> Materiales'); ?> </li>
 <?php elseif($activo=="doc"): ?>
-        <li><?= Html::link("admin", '<span class="glyphicon glyphicon-record"></span> Home' ); ?></li>
-        <li class="active"><?= Html::link("admin/doc", '<span class="glyphicon glyphicon-exclamation-sign"></span> Informacion' ); ?> </li>
-        <li><?= Html::link("admin/herramientas",'<span class="glyphicon glyphicon-wrench"></span> Herramientas'); ?> </li>
-        <li><?= Html::link("admin/materiales",'<span class="glyphicon glyphicon-book"></span> Materiales'); ?> </li>
+        <li><?= Html::link("$login", '<span class="glyphicon glyphicon-record"></span> Home' ); ?></li>
+        <li class="active"><?= Html::link("$login/doc", '<span class="glyphicon glyphicon-exclamation-sign"></span> Informacion' ); ?> </li>
+        <li><?= Html::link("$login/herramientas",'<span class="glyphicon glyphicon-wrench"></span> Herramientas'); ?> </li>
+        <li><?= Html::link("$login/materiales",'<span class="glyphicon glyphicon-book"></span> Materiales'); ?> </li>
 <?php elseif($activo=="herramientas"): ?>
-        <li><?= Html::link("admin", '<span class="glyphicon glyphicon-record"></span> Home' ); ?></li>
-        <li><?= Html::link("admin/doc", '<span class="glyphicon glyphicon-exclamation-sign"></span> Informacion' ); ?> </li>
-        <li class="active"><?= Html::link("admin/herramientas",'<span class="glyphicon glyphicon-wrench"></span> Herramientas'); ?> </li>
-        <li><?= Html::link("admin/materiales",'<span class="glyphicon glyphicon-book"></span> Materiales'); ?> </li>
+        <li><?= Html::link("$login", '<span class="glyphicon glyphicon-record"></span> Home' ); ?></li>
+        <li><?= Html::link("$login/doc", '<span class="glyphicon glyphicon-exclamation-sign"></span> Informacion' ); ?> </li>
+        <li class="active"><?= Html::link("$login/herramientas",'<span class="glyphicon glyphicon-wrench"></span> Herramientas'); ?> </li>
+        <li><?= Html::link("$login/materiales",'<span class="glyphicon glyphicon-book"></span> Materiales'); ?> </li>
 <?php elseif($activo=="materiales"): ?>
-        <li><?= Html::link("admin", '<span class="glyphicon glyphicon-record"></span> Home' ); ?></li>
-        <li><?= Html::link("admin/doc", '<span class="glyphicon glyphicon-exclamation-sign"></span> Informacion' ); ?> </li>
-        <li><?= Html::link("admin/herramientas",'<span class="glyphicon glyphicon-wrench"></span> Herramientas'); ?> </li>
-        <li class="active"><?= Html::link("admin/materiales",'<span class="glyphicon glyphicon-book"></span> Materiales'); ?> </li>
+        <li><?= Html::link("$login", '<span class="glyphicon glyphicon-record"></span> Home' ); ?></li>
+        <li><?= Html::link("$login/doc", '<span class="glyphicon glyphicon-exclamation-sign"></span> Informacion' ); ?> </li>
+        <li><?= Html::link("$login/herramientas",'<span class="glyphicon glyphicon-wrench"></span> Herramientas'); ?> </li>
+        <li class="active"><?= Html::link("$login/materiales",'<span class="glyphicon glyphicon-book"></span> Materiales'); ?> </li>
 <?php endif; ?>
         <li  ><?= Html::link("auth/logout",'<span class="glyphicon glyphicon-log-out"></span> Salir'); ?> </li>
         </ul>

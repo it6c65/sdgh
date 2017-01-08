@@ -4,7 +4,7 @@ var options={valueNames:['nombre','disponibilidad'],
         ListPagination({})
     ]
 };
-var herramientas= new List('herramientas',options);
+var herramientas= new List('almacen',options);
 $("#btn-editar").click(function(){
 });
 
