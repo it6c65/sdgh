@@ -2,8 +2,21 @@
 View::template("home");
 class UserController extends AppController {
 
+    protected function before_filter(){
+        if(!Load::model("usuarios")->logged()){
+            Redirect::to("index");
+        }else if(!$this->acl->is_allowed($this->userRol, 
+            $this->controller_name,
+            $this->action_name)){
+            View::template(NULL);
+            View::select(NULL);
+            Flash::error("Acceso denegado");
+            return false;
+        }
+    }
+
     public function index() {
-        $this->hola="hola mundo!!!";
+        Flash::info("Estamos en la accion {$this->action_name} de {$this->userRol}");
     }
 
     public function doc() {

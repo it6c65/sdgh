@@ -3,13 +3,22 @@ View::template("home");
 class AdminController extends AppController {
 
     protected function before_filter(){
-        if(!Load::model("usuarios")){
+        /* Verifica si el usuario esta logeado */
+        if(!Load::model("usuarios")->logged()){
             Redirect::to("index");
+            /* Luego verifica su rol en la ACL */
+        }else if(!$this->acl->is_allowed($this->userRol, 
+            $this->controller_name,
+            $this->action_name)){
+            View::template(NULL);
+            View::select(NULL);
+            Flash::error("Acceso denegado");
+            return false;
         }
     }
 
     public function index() {
-        $this->hola="hola mundo!!!";
+        Flash::info("Estamos en la accion {$this->action_name} con el rol de {$this->userRol}");
     }
 
     public function doc() {

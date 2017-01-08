@@ -1,8 +1,8 @@
-<?php 
+<?php
 
 class Usuarios extends ActiveRecord{
 
-    //Metodo de logear
+    //Metodo para iniciar sesion
 
     public function login(){
         /*Declaro el tipo de adaptador con el que logeo*/
@@ -14,19 +14,18 @@ class Usuarios extends ActiveRecord{
         $auth->setAlgos("md5");
         //Autentifica, si es correcta, el metodo retornara TRUE
         //En todo el metodo
-        if($auth->identify()){
-            return true;
-        }else{
+        if($auth->identify()) return true;
         //Si es FALSE, mostrara el error y retornara false
         // en todo el metodo
-            Flash::error($auth->getError());
-            return false;
-        } 
+        Flash::error($auth->getError());
+        return false;
     }
+    /* Cierra sesion */
     public function logout(){
         Auth2::factory("model")->logout();
     }
+    /* Valida si si el usuario esta logeado */
     public function logged(){
-        Auth2::factory("model")->isValid();
+        return Auth2::factory("model")->isValid();
     }
 }
