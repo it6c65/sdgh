@@ -14,16 +14,16 @@
                 <h2 class="modal-title text-center" id="title-agregarM"><strong>Agregar Material</strong></h2>
             </div>
             <div class="modal-body bg-success">
-                <?= Form::open("materiales/crear"); ?>
-                    <div class="form-group">
+                <?= Form::open("materiales/crear", "POST", 'onsubmit="return valida_material()"'); ?>
+                    <div class="form-group" id="m_nombre">
                         <?= Form::label("Nombre: ", "materiales.nombre", 'class="control-label"' ); ?>
                         <?= Form::text("materiales.nombre", 'class="form-control input-sm"' ); ?>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group" id="m_num">
                         <?= Form::label("Cantidad: ", "materiales.num"); ?>
                         <?= Form::input('number','materiales.num', 'class="form-control input-sm"'); ?>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group" id="m_status">
                         <?= Form::label("Estado de las Herramientas:　", "materiales.status"); ?>
                         <?php $status_m = array( 'Seleccione', 'Disponible' , 'No disponible' ); ?>
                         <?= Form::select("materiales.status",$status_m, 'class="form-control input-sm"', 'Seleccione'); ?>
