@@ -8,7 +8,7 @@ Class HerramientasController extends AppController{
         if(Input::hasPost("herramientas")){
             $h = new herramientas(Input::post("herramientas"));
             if(!$h->save()){
-                Flash::error("FALLO :S");
+                Flash::error("ERROR!");
             }else{
                 Input::delete();
                 Redirect::to("admin/herramientas");
@@ -20,7 +20,7 @@ Class HerramientasController extends AppController{
         $h = new Herramientas();
         if(Input::hasPost("herramientas")){
             if(!$h->update(Input::post("herramientas"))){
-                Flash::error("FALLO :S");
+                Flash::error("ERROR!");
             }else{
                 Redirect::to("admin/herramientas");
             }
@@ -30,7 +30,7 @@ Class HerramientasController extends AppController{
     public function borrar($id){
         $h = new Herramientas();
         if(!$h->delete((int)$id)){
-            Flash::error("FALLO :S");
+            Flash::error("ERROR!");
         }else{
             Redirect::to("admin/herramientas");
         }

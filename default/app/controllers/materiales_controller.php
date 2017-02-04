@@ -8,7 +8,7 @@ Class MaterialesController extends AppController{
         if(Input::hasPost("materiales")){
             $m = new materiales(Input::post("materiales"));
             if(!$m->save()){
-                Flash::error("FALLO :S");
+                Flash::error("ERROR!");
             }else{
                 Input::delete();
                 Redirect::to("admin/materiales");
@@ -21,7 +21,7 @@ Class MaterialesController extends AppController{
         $m = new Materiales();
         if(Input::hasPost("materiales")){
             if(!$m->update(Input::post("materiales"))){
-                Flash::error("FALLO :S");
+                Flash::error("ERROR!");
             }else{
                 Redirect::to("admin/materiales");
             }
@@ -31,7 +31,7 @@ Class MaterialesController extends AppController{
     public function borrar($id){
         $m = new Materiales();
         if(!$m->delete((int)$id)){
-            Flash::error("FALLO :S");
+            Flash::error("ERROR!");
         }else{
             Redirect::to("admin/materiales");
         }
