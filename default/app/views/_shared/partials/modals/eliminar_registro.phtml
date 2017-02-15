@@ -1,0 +1,25 @@
+<!-- Boton de Eliminar del registro -->
+<div class="text-center">
+<button class="btn btn-default btn-danger btn-labeled" data-toggle="modal" data-target="#borrar-registro" aria-expanded="false" aria-controls="borrar-registro">
+<span class="btn-label"><span class="glyphicon glyphicon-fire"></span></span>Borrar Registro 
+<span class="btn-label btn-label-right"><span class="glyphicon glyphicon-fire"></span></span>
+</button>
+</div>
+
+<!-- Modal ha mostrar Antes de borrar -->
+<div id="borrar-registro" class="modal" tabindex="-1" role="dialog" aria-labelledby="BorrarRegistro">
+  <div class="modal-dialog modal-sm" role="document">
+           <div class="modal-content text-center">
+             <div class="modal-header" style="background-color:maroon;color:white;">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <h2 class="modal-title">¿Seguro?</h2>
+                </div>
+        <div class="modal-body">
+                <?= Html::link("admin/borrar_registro", "Sí", 'class="btn btn-danger"'); ?>
+                <button class="btn btn-default" data-dismiss="modal"> No</button>
+            </div>
+        </div>
+    </div>
+</div>

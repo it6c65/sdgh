@@ -22,7 +22,7 @@
  */
 
 /**
- * Clase para enviar mensajes a la vista
+ * Clase para enviar mensajes a la vista (version adaptada a Bootstrap)
  *
  * Envio de mensajes de advertencia, éxito, información
  * y errores a la vista.

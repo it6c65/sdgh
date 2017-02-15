@@ -2,3 +2,100 @@
 <?php View::partial("responsive") ?>
 <br>
 <?php View::content() ?>
+<!-- pestañas del admin -->
+<ul class="nav nav-pills nav-justified" role="tablist">
+    <!-- pestaña registro -->
+    <li class="active" role="presentation">
+        <a href="#registro" aria-controls="registro" role="pill" data-toggle="pill">
+<span class="glyphicon glyphicon-th-list"></span> Registro
+</a>
+    </li>
+    <!-- pestaña para cambiar clave -->
+    <li role="presentation">
+        <a href="#cambiar_clave" aria-controls="cambiar_clave" role="pill" data-toggle="pill">
+<span class="glyphicon glyphicon-repeat"></span> Cambiar Clave
+</a>
+    </li>
+</ul>
+<!-- Contenido de las pestañas -->
+<div class="tab-content">
+    <!-- Contenido del Registro de Logins -->
+    <div id="registro" class="tab-pane active" role="tabpanel">
+<div class="page-header text-center">
+    <h1>Registro de Inicios de Sesión</h1>
+</div>
+<?php if($num_r>=90): ?>
+<div class="alert alert-danger" role="alert"> <span class="glyphicon glyphicon-alert"></span> <strong>Registro Lleno! Por favor Borrar </strong></div>
+<?php elseif($num_r>=60): ?>
+<div class="alert alert-warning" role="alert"> <span class="glyphicon glyphicon-alert"></span> <strong>Recuerda borrar el registro regularmente! </strong></div>
+<?php endif; ?>
+<!-- tabla de contenido -->
+<div class="table-responsive">
+    <table class="table">
+        <thead>
+            <!-- titulos de la tabla -->
+            <tr>
+                <th class="text-center">Numero</th>
+                <th class="text-center">Fecha</th>
+                <th class="text-center">Hora</th>
+                <th class="text-center">Usuario</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- contenido de la tabla -->
+<?php foreach ($registro as $item ) : ?>
+            <tr>
+            <td class="bg-primary text-center"><?= $item->id ?></td>
+            <td class="text-center"><strong><?= $item->fecha_at ?></strong> </td>
+            <td class="text-center"> <mark><?= date("h:i:s A",strtotime($item->hora)) ?></mark></td>
+<?php if($item->usuarios_id==1): ?>
+<td class="text-center"> <span class="label label-primary">Admin</span></td>
+<?php else: ?>
+<td class="text-center"> <span class="label label-default">Invitado</span></td>
+<?php endif; ?>
+            </tr>
+<?php endforeach; ?>
+        </tbody>
+    </table>
+</div>
+<br>
+<br>
+<?php if(!$registro==NULL): ?>
+<?php View::partial("modals/eliminar_registro"); ?>
+<?php endif; ?>
+<br>
+    </div>
+    <!-- Contenido de cambiar de clave -->
+    <div id="cambiar_clave" class="tab-pane" role="tabpanel">
+        <!-- formulario para cambiar clave -->
+        <?= Form::open("admin/cambiar_clave"); ?>
+<legend class="text-center"><strong>Cambiar Clave</strong></legend>
+<div class="container-fluid">
+<!-- Select de usuarios -->
+<div class="row">
+<div class="form-group col-sm-6 col-sm-offset-3">
+<?= Form::label("Seleccione el Usuario:","usuarios.id"); ?>
+<?= Form::Select("usuarios.id",array("Seleccione","Admin","Invitado"), 'class="form-control"'); ?>
+</div>
+</div>
+<!-- Campo de Contraseña 1 -->
+<div class="row">
+<div class="form-group input-group col-sm-6 col-sm-offset-3">
+<span class="input-group-addon"><span class="glyphicon glyphicon-edit"></span></span>
+<?= Form::pass("usuarios.password",'class="form-control" placeholder="Contraseña Nueva"'); ?>
+</div>
+</div>
+<!-- Campo de Contraseña 2 -->
+ <div class="row">
+<div class="form-group input-group col-sm-6 col-sm-offset-3">
+<span class="input-group-addon"><span class="glyphicon glyphicon-plus"></span></span>
+<?= Form::pass("usuarios.password",'class="form-control" placeholder="Repetir Contraseña"'); ?>
+</div>       
+</div>
+<div class="form-group text-center">
+<!-- Boton de enviar -->
+<button type="submit" class="btn btn-sm btn-labeled btn-primary"><span class="btn-label"><span class="glyphicon glyphicon-retweet"></span></span> Cambiar Clave</button>
+</div>
+<?= Form::close(); ?>
+    </div>
+</div>

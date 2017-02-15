@@ -36,17 +36,17 @@ class AppController extends Controller
         /* Instancio una la lista de control de acceso */
         $this->acl = new Acl();
         /* Agrego los roles(o rangos) de acceso */ 
-        $this->acl->add_role(new AclRole("")); // "" es un invitado
+        $this->acl->add_role(new AclRole("")); // "" no ha iniciado sesion
         $this->acl->add_role(new AclRole("adm")); //adm es administrador
         $this->acl->add_role(new AclRole("usr")); //usr es usuario
         /* Agrego los recursos que seran restringidos */
-        $this->acl->add_resource(new AclResource("admin"),"index","herramientas","materiales","doc");
+        $this->acl->add_resource(new AclResource("admin"),"index","herramientas","materiales","doc","cambiar_clave","borrar_registro");
         $this->acl->add_resource(new AclResource("user"),"index","herramientas","materiales","doc");
         $this->acl->add_resource(new AclResource("herramientas"),"crear","editar","borrar");
         $this->acl->add_resource(new AclResource("index"),"index");
         /* Agrego los permisos de rol(rango) de la ACL */
         $this->acl->allow("", "index", array("index"));
-        $this->acl->allow("adm", "admin", array("index","herramientas","materiales","doc"));
+        $this->acl->allow("adm", "admin", array("index","herramientas","materiales","doc","cambiar_clave","borrar_registro"));
         $this->acl->allow("adm", "herramientas", array("crear","editar","borrar"));
         $this->acl->allow("usr", "user", array("index","herramientas","materiales","doc"));
 

@@ -6,7 +6,7 @@ class Usuarios extends ActiveRecord{
 
     public function login(){
         /*Declaro el tipo de adaptador con el que logeo*/
-        /*que sera un modelo de la base de datos*/
+        /*que sera un *modelo* de la base de datos*/
         $auth = Auth2::factory("model");
         //Declaro el modelo que logeara
         $auth->setModel("usuarios");
