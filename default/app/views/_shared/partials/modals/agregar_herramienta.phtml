@@ -14,7 +14,7 @@
                 <h2 class="modal-title text-center" id="title-agregarH"><strong>Agregar Herramienta</strong></h2>
             </div>
             <div class="modal-body bg-success">
-                <?= Form::open("herramientas/crear","POST",'onsubmit="return valida_herramienta()"'); ?>
+                <?= Form::open("herramientas/crear","POST",'onsubmit="return agregar_herramienta()"'); ?>
                     <div class="form-group" id="h_nombre">
                         <?= Form::label("Nombre: ", "herramientas.nombre", 'class="control-label"' ); ?>
                         <?= Form::text("herramientas.nombre", 'class="form-control input-sm"' ); ?>

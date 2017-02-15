@@ -14,7 +14,7 @@
                 <h2 class="modal-title text-center" id="title-agregarM"><strong>Agregar Material</strong></h2>
             </div>
             <div class="modal-body bg-success">
-                <?= Form::open("materiales/crear", "POST", 'onsubmit="return valida_material()"'); ?>
+                <?= Form::open("materiales/crear", "POST", 'onsubmit="return agregar_material()"'); ?>
                     <div class="form-group" id="m_nombre">
                         <?= Form::label("Nombre: ", "materiales.nombre", 'class="control-label"' ); ?>
                         <?= Form::text("materiales.nombre", 'class="form-control input-sm"' ); ?>

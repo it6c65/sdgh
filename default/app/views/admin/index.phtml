@@ -68,28 +68,28 @@
     <!-- Contenido de cambiar de clave -->
     <div id="cambiar_clave" class="tab-pane" role="tabpanel">
         <!-- formulario para cambiar clave -->
-        <?= Form::open("admin/cambiar_clave"); ?>
+        <?= Form::open("admin/cambiar_clave", "POST", 'onsubmit="return change_password()"'); ?>
 <legend class="text-center"><strong>Cambiar Clave</strong></legend>
 <div class="container-fluid">
 <!-- Select de usuarios -->
-<div class="row">
+<div class="row" id="cc_user">
 <div class="form-group col-sm-6 col-sm-offset-3">
 <?= Form::label("Seleccione el Usuario:","usuarios.id"); ?>
 <?= Form::Select("usuarios.id",array("Seleccione","Admin","Invitado"), 'class="form-control"'); ?>
 </div>
 </div>
 <!-- Campo de Contraseña 1 -->
-<div class="row">
+<div class="row" id="cc_pass">
 <div class="form-group input-group col-sm-6 col-sm-offset-3">
 <span class="input-group-addon"><span class="glyphicon glyphicon-edit"></span></span>
 <?= Form::pass("usuarios.password",'class="form-control" placeholder="Contraseña Nueva"'); ?>
 </div>
 </div>
 <!-- Campo de Contraseña 2 -->
- <div class="row">
+ <div class="row" id="cc_conf">
 <div class="form-group input-group col-sm-6 col-sm-offset-3">
 <span class="input-group-addon"><span class="glyphicon glyphicon-plus"></span></span>
-<?= Form::pass("usuarios.password",'class="form-control" placeholder="Repetir Contraseña"'); ?>
+<?= Form::pass("confirmation",'class="form-control" placeholder="Repetir Contraseña"'); ?>
 </div>       
 </div>
 <div class="form-group text-center">

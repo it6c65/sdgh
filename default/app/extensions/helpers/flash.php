@@ -43,7 +43,7 @@ class Flash
     public static function show($name, $text)
     {
         if (isset($_SERVER['SERVER_SOFTWARE'])) {
-            echo '<div class="alert alert-', $name, ' flash"> <span class="glyphicon glyphicon-info-sign"></span> ', $text, '</div>', PHP_EOL;
+            echo '<div class="alert alert-', $name, ' alert-dismissible flash"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button> <span class="glyphicon glyphicon-info-sign"></span> ', $text, '</div>', PHP_EOL;
         } else {
             echo $name, ': ', strip_tags($text), PHP_EOL;
         }

@@ -9,27 +9,27 @@
                 <h2 class="modal-title text-center"><strong>Editar Herramienta</strong></h2>
             </div>
             <div class="modal-body bg-info">
-                <?= Form::open("herramientas/editar"); ?>
-                    <?= Form::hidden("herramientas.id", NULL, $id_h); ?>
-                    <div class="form-group">
-                        <?= Form::label("Nombre: ", "herramientas.nombre", 'class="control-label"' ); ?>
-                        <?= Form::text("herramientas.nombre", 'class="form-control input-sm"', $nombre ); ?>
+                <?= Form::open("herramientas/editar", "POST", 'onsubmit="return editar_herramienta()"'); ?>
+                    <?= Form::hidden("editar.id", NULL, $id_h); ?>
+                    <div class="form-group" id="e_nombre">
+                        <?= Form::label("Nombre: ", "editar.nombre", 'class="control-label"' ); ?>
+                        <?= Form::text("editar.nombre", 'class="form-control input-sm"', $nombre ); ?>
                     </div>
-                    <div class="form-group">
-                        <?= Form::label("Cantidad: ", "herramientas.num"); ?>
-                        <?= Form::input('number','herramientas.num', 'class="form-control input-sm"', $cantidad ); ?>
+                    <div class="form-group" id="e_num">
+                        <?= Form::label("Cantidad: ", "editar.num"); ?>
+                        <?= Form::input('number','editar.num', 'class="form-control input-sm"', $cantidad ); ?>
                     </div>
-                    <div class="form-group">
-                        <?= Form::label("Serial de la Herramienta: ", "herramientas.serial"); ?>
-                        <?= Form::text("herramientas.serial", 'class="form-control input-sm" data-mask="wwwwwwww"', $serial); ?>
+                    <div class="form-group" id="e_serial">
+                        <?= Form::label("Serial de la Herramienta: ", "editar.serial"); ?>
+                        <?= Form::text("editar.serial", 'class="form-control input-sm" data-mask="wwwwwwww"', $serial); ?>
                     </div>
-                    <div class="form-group">
-                        <?= Form::label("Estado de las Herramientas:　", "herramientas.status"); ?>
+                    <div class="form-group" id="e_status">
+                        <?= Form::label("Estado de las Herramientas:　", "editar.status"); ?>
                         <?php $status_h = array( 'Seleccione', 'Disponible' , 'Dañado' , 'Prestado', ' Otro (No disponible) ' ); ?>
                         <?php if($cantidad==0): ?>
-                        <?= Form::select("herramientas.status",$status_h, 'class="form-control input-sm"', 4 ); ?>
+                        <?= Form::select("editar.status",$status_h, 'class="form-control input-sm"', 4 ); ?>
                         <?php else: ?>
-                        <?= Form::select("herramientas.status",$status_h, 'class="form-control input-sm"', $num_status ); ?>
+                        <?= Form::select("editar.status",$status_h, 'class="form-control input-sm"', $num_status ); ?>
                         <?php endif; ?>
                     </div>
                     <div class="form-group text-center">

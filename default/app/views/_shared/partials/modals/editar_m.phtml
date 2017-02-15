@@ -9,23 +9,23 @@
                 <h2 class="modal-title text-center"><strong>Editar Herramienta</strong></h2>
             </div>
             <div class="modal-body bg-info">
-                <?= Form::open("materiales/editar"); ?>
-                    <?= Form::hidden("materiales.id", NULL, $id_m); ?>
-                    <div class="form-group">
-                        <?= Form::label("Nombre: ", "materiales.nombre", 'class="control-label"' ); ?>
-                        <?= Form::text("materiales.nombre", 'class="form-control input-sm"', $nombre ); ?>
+                <?= Form::open("materiales/editar", "POST", 'onsubmit="return editar_material()"'); ?>
+                    <?= Form::hidden("editar.id", NULL, $id_m); ?>
+                    <div class="form-group" id="e_nombre">
+                        <?= Form::label("Nombre: ", "editar.nombre", 'class="control-label"' ); ?>
+                        <?= Form::text("editar.nombre", 'class="form-control input-sm"', $nombre ); ?>
                     </div>
-                    <div class="form-group">
-                        <?= Form::label("Cantidad: ", "materiales.num"); ?>
-                        <?= Form::input('number','materiales.num', 'class="form-control input-sm"', $cantidad ); ?>
+                    <div class="form-group" id="e_num">
+                        <?= Form::label("Cantidad: ", "editar.num"); ?>
+                        <?= Form::input('number','editar.num', 'class="form-control input-sm"', $cantidad ); ?>
                     </div>
-                    <div class="form-group">
-                        <?= Form::label("Estado del Material:　", "materiales.status"); ?>
+                    <div class="form-group" id="e_status">
+                        <?= Form::label("Estado del Material:　", "editar.status"); ?>
                         <?php $status_m = array( 'Seleccione', 'Disponible', 'No disponible' ); ?>
                         <?php if($cantidad==0): ?>
-                        <?= Form::select("materiales.status",$status_m, 'class="form-control input-sm"', 2 ); ?>
+                        <?= Form::select("editar.status",$status_m, 'class="form-control input-sm"', 2 ); ?>
                         <?php else: ?>
-                        <?= Form::select("materiales.status",$status_m, 'class="form-control input-sm"', $num_status ); ?>
+                        <?= Form::select("editar.status",$status_m, 'class="form-control input-sm"', $num_status ); ?>
                         <?php endif; ?>
                     </div>
                     <div class="form-group text-center">
