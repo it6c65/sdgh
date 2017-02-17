@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Controller por defecto si no se usa el routes
+ * Controller del login
  *
  */
 class IndexController extends AppController {

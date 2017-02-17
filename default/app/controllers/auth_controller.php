@@ -1,6 +1,7 @@
 <?php
 /* Configuro el reloj del servidor al de Venezuela */
 date_default_timezone_set('America/Caracas');
+/* Controlador de autentificacion */
 class AuthController extends AppController {
     /* metodo de logeo */
     public function login(){
