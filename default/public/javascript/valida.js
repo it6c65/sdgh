@@ -118,18 +118,6 @@ function agregar_herramienta(){
         return false;
     }
 
-    // compruebo si el campo serial esta vacio
-    if ( $(serial).val()==""){
-        $("#h_serial").addClass("has-warning");
-        $(serial).notify("el campo no puede estar vacio","warn");
-        return false;
-    // compruebo si el campo serial tiene todos sus digitos
-    }else if(!comprobar_serial.test($(serial).val())){
-        $("#h_serial").addClass("has-error");
-        $(serial).notify("Serial incompleto");
-        return false;
-    }
-
     // compruebo si ha seleccionado una opcion
     if ( $(estado).val()==0){
         $("#h_status").addClass("has-warning");
@@ -172,19 +160,6 @@ function editar_herramienta(){
     }else if(!comprobar_num.test($(cantidad).val())){
         $("#e_num").addClass("has-error");
         $(cantidad).notify("No puede puede poner letras");
-        return false;
-    }
-
-    // compruebo si el campo serial esta vacio
-    if ( $(serial).val()==""){
-        $("#e_serial").addClass("has-warning");
-        $(serial).notify("el campo no puede estar vacio","warn");
-        return false;
-
-    // compruebo si el campo serial tiene todos sus digitos
-    }else if(!comprobar_serial.test($(serial).val())){
-        $("#e_serial").addClass("has-error");
-        $(serial).notify("Serial incompleto");
         return false;
     }
 

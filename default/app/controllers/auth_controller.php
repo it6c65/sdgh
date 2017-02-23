@@ -27,6 +27,9 @@ class AuthController extends AppController {
             }else{
                 Redirect::to("user/index");
             }
+        }else{
+            Flash::error("Clave incorrecta");
+            Redirect::to("index");
         }
     }
     /* metodo para Cerrar sesion */
