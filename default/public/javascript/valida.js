@@ -118,6 +118,12 @@ function agregar_herramienta(){
         return false;
     }
 
+    if( comprobar_serial($(serial).val()) ){
+        $("h_serial").addClass("has-error");
+        $(serial).notify("No puede ser mayor de 8 caracteres");
+        return false;
+    }
+
     // compruebo si ha seleccionado una opcion
     if ( $(estado).val()==0){
         $("#h_status").addClass("has-warning");
@@ -160,6 +166,12 @@ function editar_herramienta(){
     }else if(!comprobar_num.test($(cantidad).val())){
         $("#e_num").addClass("has-error");
         $(cantidad).notify("No puede puede poner letras");
+        return false;
+    }
+
+    if( !comprobar_serial($(serial).val()) ){
+        $("h_serial").addClass("has-error");
+        $(serial).notify("No puede ser mayor de 8 caracteres");
         return false;
     }
 
