@@ -20,7 +20,6 @@ Class MaterialesController extends AppController{
                 Redirect::to("admin/materiales");
             }else{
                 /* Si se agregan, avisa y se dirigira a la vista materiales */
-                Input::delete();
                 Flash::valid("¡Ha sido agregado Correctamente!");
                 Redirect::to("admin/materiales");
             }
