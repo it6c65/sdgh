@@ -1,0 +1,73 @@
+<!-- Encabezadp del login-->
+<header class="jumbotron text-center">
+    <div class="container"> 
+        <?= Html::img('logon.png', "logo") ?>
+    </div>   
+</header>
+<?php View::content() ?>
+<br>
+<div class="container">
+   <div class="row">
+       <div class="tabpanel col-xs-12 col-xs-offset-0 col-sm-3 col-sm-2 col-md-6 col-md-offset-3">
+           <!-- Pestañas del login -->
+           <ul class="nav nav-tabs" role="tablist">
+                <!-- Acceso como usuario normal -->
+               <li role="presentation" class="active">
+                   <a href="#user" aria-controls="home" role="tab" data-toggle="tab"> 
+                       <span class="glyphicon glyphicon-home"></span> Usuario
+                   </a>
+               </li>
+               <!-- Acceso como Administrador -->
+               <li role="presentation"><a href="#admin" aria-controls="admin" role="tab" data-toggle="tab"> 
+                       <span class="glyphicon glyphicon-cog"> Administrador </span>
+                   </a>
+               </li>
+           </ul>
+           <!-- Contenido de las pestañas del login -->
+           <div class="tab-content">
+                <!--Contenido del login de Usuario-->
+               <div class="tab-pane active " id="user">
+                   <?= Form::open("auth/login"); ?>
+                        <input type="hidden" name="mode" value="auth">
+                        <!-- Input con Icono-->
+                       <div class="form-group input-group">
+                           <span class="input-group-addon hidden-xs"> <span class="glyphicon glyphicon-user"></span> </span>
+                           <?= Form::text("login",' class="form-control" readonly', "Invitado") ?>
+                        </div>                           
+                        <!-- Input con Icono-->
+                        <div class="form-group input-group">
+                            <span class="input-group-addon hidden-xs"> <span class="glyphicon glyphicon-lock"></span> </span>
+                           <?= Form::pass("password",'class="form-control" placeholder="Contraseña"'); ?>
+                        </div>                      
+                        <br> 
+                          <div class="form-group text-center">
+                              <button type="submit" class="btn btn-primary">Entrar <span class="glyphicon glyphicon-send"></span> </button>
+                          </div>
+                  <?= Form::close(); ?>
+               </div>
+                <!-- Contenido del login de Administrador -->
+               <div class="tab-pane" id="admin">
+                   <?= Form::open("auth/login"); ?>
+                        <input type="hidden" name="mode" value="auth">
+                        <?= Form::hidden("login", "readonly" , "Admin" ) ?>
+                        <!-- Input con icono y boton -->
+                       <div class="form-group input-group">
+                           <span class="input-group-addon hidden-xs"> <span class="glyphicon glyphicon-lock"></span> </span>
+                            <?= Form::pass("password",'class="form-control" placeholder="Contraseña del Administrador "'); ?>
+                           <span class="input-group-btn hidden-xs">
+                               <button type="submit" class="btn btn-primary">
+                                   Entrar
+                                   <span class="glyphicon glyphicon-send"></span> 
+                               </button>
+                           </span>
+                       </div>
+                       <div class="form-group visible-xs-12 visible-xs-block text-center">
+                                   <button type="submit" class="btn btn-primary"> Entrar <span class="glyphicon glyphicon-send"></span></button>
+                         </div>
+                  <?= Form::close(); ?>
+               </div>
+           </div>
+        </div>
+   </div>
+<br>
+<br>

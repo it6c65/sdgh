@@ -1,0 +1,54 @@
+<?php View::partial("menu", FALSE, array( "activo" => 'materiales', "login" => "user" )) ?>
+<?php View::partial("responsive") ?>
+<!--Encabezado de la pagina -->
+<div class="page-header text-center">
+    <h1>Listado de Materiales</h1>
+</div>
+<div class="row">
+    <!--Buscador de herramientas/materiales-->
+    <div id="almacen" class="col-xs-12 col-md-offset-1">
+        <div class="input-group col-xs-6 col-xs-offset-3 col-md-4 col-md-offset-7">
+        <input type="text" class="search form-control input-sm" placeholder="Buscar...">
+        <div class="input-group-btn">
+            <button class="btn btn-info btn-sm"><span class="glyphicon glyphicon-search"></span></button>
+        </div>
+    </div>
+    <br>
+    <button class="sort btn btn-default btn-sm" data-sort="nombre"> <span class="glyphicon glyphicon-sort"></span> Ordenar por nombre</button>
+    <button class="sort btn btn-default btn-sm" data-sort="disponibilidad"> <span class="glyphicon glyphicon-sort"></span> Ordenar por Estado</button>
+<br>
+<br>
+    <div class="table-responsive">
+         <table class="table">
+            <thead>
+                <!-- Titulo de la tabla-->
+                <tr>
+                <th>Nombre</th>
+                <th>Cantidad</th>
+                <th>Estado</th>
+                </tr>
+            </thead>        
+            <tbody class="list">
+<!-- Contenido de la tabla (dinámico)-->
+<?php foreach ($material as $item) : ?>
+            <tr>
+                <td class="nombre"> <?= $item->nombre ?></td>
+                <td class="cantidad"> <span class="badge"><?= $item->num ?></span></td>
+                <!-- Estados de los materiales -->
+                <?php if($item->num==0) : ?>  
+                    <td class="disponibilidad"> <span class="label label-danger">No disponible </span></td>
+                 <!-- 1 = Disponible -->
+                <?php elseif($item->status==1): ?>
+                    <td class="disponibilidad"> <span class="label label-success">Disponible </span></td>
+                <!-- Cualquier otro estado es que no esta disponible -->
+                <?php else: ?>
+                    <td class="disponibilidad"> <span class="label label-danger">No disponible </span></td>
+                <?php endif; ?>
+            </tr> 
+<?php endforeach; ?>
+            </tbody>
+        </table>
+         <!--Paginacion dinamica con JS -->
+            <div class="text-center"><ul class="pagination pagination-sm"></ul></div> 
+    </div>
+</div>

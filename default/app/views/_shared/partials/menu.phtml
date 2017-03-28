@@ -1,0 +1,44 @@
+ <!-- Columna 1 -->
+<div class="container col-md-3">
+    <nav class="navmenu navmenu-default navmenu-fixed-left offcanvas-sm" role="navigation" id="menu-principal">
+        <a class="navmenu-brand text-center" href="#">
+        <?= Html::img("favicon.png","logo",'class="img-responsive"') ?>
+         <div class="hidden-md hidden-lg visible-sm-12 visible-xs-12">
+            <button class="btn-slider btn btn-menu btn-lg " data-toggle="offcanvas" data-target="#menu-principal" data-canvas="body">
+                Volver <span class="glyphicon glyphicon-share-alt"></span>
+            </button>
+        </div>
+    <!-- Menu vertical -->
+        </a>
+        <ul class="nav navmenu-nav">
+<!-- señala la seccion inicio si el partial le pasa el valor -->
+<?php if($activo=="home"): ?>
+        <li class="active"><?= Html::link("$login", '<span class="glyphicon glyphicon-record"></span> Inicio' ); ?></li>
+        <li><?= Html::link("$login/doc", '<span class="glyphicon glyphicon-exclamation-sign"></span> Información' ); ?> </li>
+        <li><?= Html::link("$login/herramientas",'<span class="glyphicon glyphicon-wrench"></span> Herramientas'); ?> </li>
+        <li><?= Html::link("$login/materiales",'<span class="glyphicon glyphicon-book"></span> Materiales'); ?> </li>
+<!-- señala la documentacion si el partial le pasa el valor -->
+<?php elseif($activo=="doc"): ?>
+        <li><?= Html::link("$login", '<span class="glyphicon glyphicon-record"></span> Inicio' ); ?></li>
+        <li class="active"><?= Html::link("$login/doc", '<span class="glyphicon glyphicon-exclamation-sign"></span> Información' ); ?> </li>
+        <li><?= Html::link("$login/herramientas",'<span class="glyphicon glyphicon-wrench"></span> Herramientas'); ?> </li>
+        <li><?= Html::link("$login/materiales",'<span class="glyphicon glyphicon-book"></span> Materiales'); ?> </li>
+<!-- señala la seccion herramientas si el partial le pasa el valor -->
+<?php elseif($activo=="herramientas"): ?>
+        <li><?= Html::link("$login", '<span class="glyphicon glyphicon-record"></span> Inicio' ); ?></li>
+        <li><?= Html::link("$login/doc", '<span class="glyphicon glyphicon-exclamation-sign"></span> Información' ); ?> </li>
+        <li class="active"><?= Html::link("$login/herramientas",'<span class="glyphicon glyphicon-wrench"></span> Herramientas'); ?> </li>
+        <li><?= Html::link("$login/materiales",'<span class="glyphicon glyphicon-book"></span> Materiales'); ?> </li>
+<!-- señala la seccion materiales si el partial le pasa el valor -->
+<?php elseif($activo=="materiales"): ?>
+        <li><?= Html::link("$login", '<span class="glyphicon glyphicon-record"></span> Inicio' ); ?></li>
+        <li><?= Html::link("$login/doc", '<span class="glyphicon glyphicon-exclamation-sign"></span> Información' ); ?> </li>
+        <li><?= Html::link("$login/herramientas",'<span class="glyphicon glyphicon-wrench"></span> Herramientas'); ?> </li>
+        <li class="active"><?= Html::link("$login/materiales",'<span class="glyphicon glyphicon-book"></span> Materiales'); ?> </li>
+<?php endif; ?>
+        <li  ><?= Html::link("auth/logout",'<span class="glyphicon glyphicon-log-out"></span> Salir'); ?> </li>
+        </ul>
+<?= Html::img("cc.png","cc-by",'style="padding-left:100px;"') ?>
+    </nav>
+</div>
+
