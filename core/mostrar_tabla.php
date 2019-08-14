@@ -13,7 +13,7 @@ echo " <thead>
             <th>Serial</th>
             <th></th>
         </tr>
-    </thead>        
+    </thead>
 ";
  echo '<tbody class="list">';
     while ($fila = mysql_fetch_assoc($mostrar)){
